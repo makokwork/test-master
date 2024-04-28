@@ -8,7 +8,7 @@ function BlogPost({ post }) {
   return (
     <div className="blog-post">
       <h2>{post.title}</h2>
-      <img src={post.image} alt={post.title} />
+      <p>{post.image}</p>
       <p>{post.content}</p>
       <Link to={`/blog/${post.id}`} className="read-more">
         Читать далее
