@@ -1,0 +1,89 @@
+.header-documents {
+	position: relative;
+	z-index: 2;
+	padding-top: 36px;
+
+	@include desktop {
+		padding-top: 30px;
+	}
+
+	@include mobile {
+		padding-top: 15px;
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 50px;
+
+		@include tablet {
+			column-gap: 30px;
+		}
+	}
+
+	&__logo {
+
+		@include desktop {
+			min-width: 75px;
+		}
+
+		@include tablet {
+			min-width: 75px;
+		}
+
+	}
+
+
+	&__menu {
+		font-size: 15px;
+
+		@include desktop {
+			font-size: 15px;
+			
+		}
+
+		@include tablet {
+			font-size: 15px;
+		}
+		
+
+		&-list {
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			column-gap: 40px;
+			
+
+			@include desktop {
+				column-gap: 25px;
+				flex-wrap: wrap;
+			}
+			
+		}
+
+		&-link {
+			color: black;
+			display: inline-flex;
+			align-items: center;
+			height: 48px;
+
+
+
+		&:hover{
+			color: var(--color-accent);
+		}
+
+		}
+		
+	}
+
+	&__button {
+		white-space: nowrap;
+
+	}
+
+	svg {
+		fill: black;
+	}
+}

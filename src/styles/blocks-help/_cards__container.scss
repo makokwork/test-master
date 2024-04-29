@@ -1,0 +1,97 @@
+.cards__container {
+
+	&-link {
+		margin-top: 43px;
+		display: flex;
+		justify-content: center;
+
+		a {
+			font-size: 24px;
+			color: var(--color-accent);
+
+			@include hover {
+				color: #7f1d1d;
+			}
+		}
+	}
+
+	&-button {
+		width: 167px;
+		height: 45px;
+		margin-bottom: 17px;
+	}
+
+	display: inline-flex;
+	flex-direction: row;
+	column-gap: 50px;
+	align-items: center;
+
+	&-document {
+		background-color: rgba(217, 217, 217, 0.15);
+		border: 1px solid rgba(0, 0, 0, 0.3);
+
+		width: 474px;
+		height: 180px;
+		border-radius: 15px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+
+	&-bank {
+		background-color: rgba(217, 217, 217, 0.15);
+		border: 1px solid rgba(0, 0, 0, 0.3);
+
+		width: 620px;
+		height: 280px;
+		border-radius: 15px;
+
+		display: flex;
+		flex-direction: column;
+
+		&-title {
+			display: flex;
+			justify-content: center;
+		}
+
+		&-inner {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+		}
+
+		&-sber {
+			padding-left: 40px;
+
+			h5 {
+				margin: 0;
+				margin-bottom: 5px;
+				margin-top: 5px;
+				color: rgba(0, 0, 0, 0.5);
+			}
+
+			p {
+				line-height: 1.3;
+			}
+		}
+
+		&-tinkoff {
+			padding-right: 40px;
+
+			h5 {
+				margin: 0;
+				margin-bottom: 5px;
+				margin-top: 5px;
+				color: rgba(0, 0, 0, 0.5);
+			}
+
+			p {
+				line-height: 1.3;
+			}
+		}
+		
+	}
+}

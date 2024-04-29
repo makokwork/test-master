@@ -1,0 +1,24 @@
+.banner-partnership {
+  background: url(../../images/partnership.png) center/cover no-repeat;
+  max-width: 1300px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+
+  &__title {
+    color: white;
+  }
+
+  &__description {
+    color: white;
+  }
+
+  &__button {
+    margin-top: 65px;
+    width: 208px;
+  }
+}

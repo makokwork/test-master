@@ -1,0 +1,29 @@
+.trust {
+
+	&__inner {
+		display: flex;
+		flex-direction: row;
+		column-gap: 113px;
+		row-gap: 43px;
+		flex-wrap: wrap;
+
+		@include desktop {
+			column-gap: 75px;
+			justify-content: center;
+		}
+
+		@include tablet-above {
+			justify-content: space-between;
+			align-content: center;
+		}
+
+		@include mobile-above {
+			justify-content: center;
+		}
+
+	}
+
+	&__platform {
+		padding-top: 160px;
+	}
+}

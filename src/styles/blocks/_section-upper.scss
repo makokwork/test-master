@@ -1,0 +1,16 @@
+.section-upper {
+  position: relative;
+  margin-top: -84px;
+  z-index: 1;
+  max-width: 100%;
+  background: url('../../images/section-title.png') center/cover no-repeat;
+  padding-block: var(--section-padding-y);
+
+  @include tablet-above {
+    margin-top: -130px;
+  }
+
+  @include tablet {
+    margin-top: -130px;
+  }
+}

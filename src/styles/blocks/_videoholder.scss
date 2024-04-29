@@ -1,0 +1,66 @@
+.videoholder {
+	margin-block: 130px;
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		margin-block: 100px;
+	}
+
+	@include mobile {
+		margin-block: 70px;
+	}
+
+	&__body {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		row-gap: 43px;
+
+		video {
+			margin-top: 43px;
+			margin-bottom: 15px;
+			max-width: 900px;
+		}
+
+
+		h2 {
+
+			margin: 0;
+		}
+
+		p {
+			font-size: 24px;
+			font-weight: 600;
+		}
+
+		@include tablet {
+
+			video {
+				width: 750px;
+			}
+			row-gap: 20px;
+		}
+
+		@include mobile {
+
+			video {
+				width: 480px;
+			}
+
+			row-gap: 15px;
+		}
+
+		@include mobile-s {
+			video {
+				width: 470px;
+			}
+		}
+
+		row-gap: 10px;
+
+	}
+
+}

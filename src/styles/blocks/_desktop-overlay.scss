@@ -1,0 +1,36 @@
+.desktop-overlay {
+	transition-duration: var(--transition-duration);
+	width: 1200px;
+	height: 800px;
+	margin: auto;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 15px;
+
+	&:modal {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	&__close-button-wrapper {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: center;
+		column-gap: 20px;
+
+		iframe {
+			width: 540px;
+			height: 700px;
+			border-radius: 15px;
+		}
+
+	}
+	
+
+	
+
+}

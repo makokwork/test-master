@@ -1,0 +1,60 @@
+.start {
+	&__body {
+		display: flex;
+		column-gap: 100px;
+
+		@include desktop {
+			column-gap: 90px;
+
+			@include mobile {
+				
+				@include mobile-s-above {
+					column-gap: 40px;
+				}
+			}
+
+		}
+
+		@include tablet {
+			h2 {
+				font-size: 36px;
+			}
+			@include mobile-above {
+
+				h2 {
+					font-size: 26px;
+				}
+			}
+		}
+
+
+		}
+
+	&__image {
+		max-width: 100%;
+		height: auto;
+		
+			
+
+			// @include tablet {
+				
+			// 	@include mobile-above {
+			// 		max-width: 450px;
+			// 	}
+			// }
+
+			// @include mobile {
+				
+			// 	@include mobile-s-above {
+			// 		max-width: 250px;
+			// 		height: max-content;
+			// 	}
+			// }
+
+			// @include mobile-s {
+			// 	font-size: 24px;
+			// }
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+.partners {
+
+	&__images {
+		display: flex;
+		flex-direction: row;
+		column-gap: 72px;
+		row-gap: 43px;
+		flex-wrap: wrap;
+
+		@include desktop-above {
+			column-gap: 25px;
+			justify-content: center;
+		}
+
+		@include desktop {
+			column-gap: 25px;
+			justify-content: center;
+		}
+	}
+}

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-import '../styles/BlogPostPage.css';
-
 function BlogPostPage({ posts }) {
   let { id } = useParams();
 
@@ -24,16 +22,17 @@ function BlogPostPage({ posts }) {
   }
 
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
+    <section className="container">
+      <div className="page-content">
         <h2>{post.title}</h2>
-        <img src={post.image} alt={post.title} />
         <p>{post.content}</p>
       </div>
-      <div className="back-to-blog">
-        <Link to="/">Назад к блогу</Link>
+      <div>
+        <Link to="/" className="button">
+          Назад к блогу
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }
 
