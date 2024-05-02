@@ -77,7 +77,7 @@ function Footer() {
           </p>
 
           <div className="footer__body-textplaceholder">
-            <label className="visually-hidden" for="email">
+            <label className="visually-hidden" htmlFor="email">
               Email
             </label>
             <input type="email" className="footer-input input" id="email" placeholder="Email" />
@@ -88,7 +88,7 @@ function Footer() {
                 viewBox="0 0 13 11"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_688_162)">
+                <g clipPath="url(#clip0_688_162)">
                   <path d="M7.79492 1.94824L11.9616 6.1149L7.79492 10.2816" stroke="white" />
                   <path d="M1.96143 6.11523H11.6837" stroke="white" />
                 </g>
@@ -130,7 +130,7 @@ function Footer() {
             </ul>
 
             <ul className="extra-list">
-              <li class="extra-list__item">
+              <li className="extra-list__item">
                 <a href="https://t.me/voinstvoXristovo">
                   <img
                     src="../../images/icons/telegram.png"

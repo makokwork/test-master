@@ -20,51 +20,51 @@ function Header() {
         <nav className="header__menu hidden-mobile">
           <ul className="header__menu-list">
             <li className="header__menu-item">
-              <a href="./main.html" className="header__menu-link current-page">
+              <Link to="/" className='header__menu-link current-page'>
                 Компания
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="./about-us.html" className="header__menu-link">
+              <Link to="/about" className="header__menu-link">
                 О нас
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="/" className="header__menu-link">
+              <Link to="/projects" className="header__menu-link">
                 Проекты
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="./reports.html" className="header__menu-link">
+              <Link to="/reports" className="header__menu-link">
                 Отчеты
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="./documents.html" className="header__menu-link">
+              <Link to="/" className="header__menu-link">
                 Документы
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="./gethelp.html" className="header__menu-link">
+              <Link to="/" className="header__menu-link">
                 Получить помощь
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="./help.html" className="header__menu-link">
+              <Link to="/" className="header__menu-link">
                 Помочь другим
-              </a>
+              </Link>
             </li>
 
             <li className="header__menu-item">
-              <a href="/" className="header__menu-link">
+              <Link to="/" className="header__menu-link">
                 Блог
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -75,7 +75,8 @@ function Header() {
         <button
           className="header__burger-button burger-button visible-mobile"
           type="button"
-          onclick="mobileOverlay.showModal()">
+          // onclick="mobileOverlay.showModal()" Нужен onClick(function)
+        >
           <span className="visually-hidden">Открыть меню навигации</span>
         </button>
       </div>

@@ -9,6 +9,9 @@ import BlogPostPage from './pages/BlogPostPage';
 import { usePosts } from './Posts';
 
 import './styles/styles.scss';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Reports from './pages/Reports';
 
 function App() {
   const { posts, addPost } = usePosts();
@@ -19,6 +22,9 @@ function App() {
       <Hero />
       <Routes>
         <Route path="/" element={<Blog posts={posts} />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/reports' element={<Reports />} />
         <Route path="/create" element={<CreateBlogPage addPost={addPost} />} />
         <Route path="/blog/:id" element={<BlogPostPage posts={posts} />} />
       </Routes>
