@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function ProjectList({ posts }) {
   return (
-    <section class="section container-about">
-      <div class="section__body">
-        <div class="section__title">
+    <section className="section container-about">
+      <div className="section__body">
+        <div className="section__title">
           <h2>Мы никогда не бросаем тех, кому нужна помощь</h2>
         </div>
         <div className="blog-post-container">

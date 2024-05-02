@@ -12,6 +12,9 @@ import Company from './pages/Company';
 import { usePosts } from './Posts';
 
 import './styles/styles.scss';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Reports from './pages/Reports';
 
 function App() {
   const { posts, addPost } = usePosts();
