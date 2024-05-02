@@ -1,7 +1,6 @@
 import React from 'react';
-
+import LogoSvg from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
-import logoSvg from '../images/logo.svg';
 
 function Header() {
   return (
@@ -9,7 +8,7 @@ function Header() {
       <div className="header__inner container">
         <Link to="/" className="header__logo logo">
           <img
-            src={logoSvg}
+            src={LogoSvg}
             alt="Центр Единство"
             className="logo__image"
             width="75"
@@ -20,13 +19,13 @@ function Header() {
         <nav className="header__menu hidden-mobile">
           <ul className="header__menu-list">
             <li className="header__menu-item">
-              <a href="./main.html" className="header__menu-link current-page">
+              <a href="/" className="header__menu-link current-page">
                 Компания
               </a>
             </li>
 
             <li className="header__menu-item">
-              <a href="./about-us.html" className="header__menu-link">
+              <a href="/AboutUs" className="header__menu-link">
                 О нас
               </a>
             </li>

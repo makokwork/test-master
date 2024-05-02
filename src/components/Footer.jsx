@@ -116,7 +116,7 @@ function Footer() {
             <ul className="extra-list">
               <li className="extra-list__item">
                 <a href="">
-                  <img src="." alt="Ватсапп" width="26" height="26" />
+                  <img src="./images/icons/whatsapp.png" alt="Ватсапп" width="26" height="26" />
                 </a>
               </li>
             </ul>
@@ -124,7 +124,7 @@ function Footer() {
             <ul className="extra-list">
               <li className="extra-list__item">
                 <a href="https://vk.com/club108684224">
-                  <img src="../images/icons/vk.png" alt="Вконтакте" width="26" height="26" />
+                  <img src="./images/icons/vk.png" alt="Вконтакте" width="26" height="26" />
                 </a>
               </li>
             </ul>
@@ -132,12 +132,7 @@ function Footer() {
             <ul className="extra-list">
               <li class="extra-list__item">
                 <a href="https://t.me/voinstvoXristovo">
-                  <img
-                    src="../../images/icons/telegram.png"
-                    alt="Телеграм"
-                    width="26"
-                    height="26"
-                  />
+                  <img src="./images/icons/telegram.png" alt="Телеграм" width="26" height="26" />
                 </a>
               </li>
             </ul>
