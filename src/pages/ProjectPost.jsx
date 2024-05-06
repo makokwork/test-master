@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function BlogPost({ post }) {
+function ProjectPost({ post }) {
   return (
     <div className="blog-post">
       <img src={post.image} alt={post.title} />
@@ -9,11 +9,11 @@ function BlogPost({ post }) {
         <h4>{post.title}</h4>
         <p>{post.content}</p>
       </div>
-      <Link to={`/blog/${post.id}`} className="button">
+      <Link to={`/project/${post.id}`} className="button">
         Узнать больше
       </Link>
     </div>
   );
 }
 
-export default BlogPost;
+export default ProjectPost;

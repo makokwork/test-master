@@ -8,7 +8,7 @@ function Footer() {
               <ul className="socials__list-first">
                 <h5>Компания</h5>
                 <li className="socials__item">
-                  <a href="" className="socials__link">
+                  <a href="/" className="socials__link">
                     Компания
                   </a>
                 </li>

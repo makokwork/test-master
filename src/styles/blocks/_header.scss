@@ -1,85 +1,91 @@
 .header {
-	position: relative;
-	z-index: 2;
-	padding-top: 36px;
+  &.document-pages {
+    color: black;
+  }
 
-	@include desktop {
-		padding-top: 30px;
-	}
+  &.content-pages {
+    color: var(--color-light);
+  }
 
-	@include mobile {
-		padding-top: 15px;
-	}
+  svg {
+    &:hover {
+      color: var(--color-accent);
+      transition-duration: var(--transition-duration);
+    }
+  }
+  position: relative;
+  z-index: 2;
+  padding-top: 36px;
 
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		column-gap: 50px;
+  @include desktop {
+    padding-top: 30px;
+  }
 
-		@include tablet {
-			column-gap: 30px;
-		}
-	}
+  @include mobile {
+    padding-top: 15px;
+  }
 
-	&__logo {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
 
-		@include desktop {
-			min-width: 75px;
-		}
+    @include tablet {
+      column-gap: 30px;
+    }
+  }
 
-		@include tablet {
-			min-width: 75px;
-		}
+  &__logo {
+    @include desktop {
+      min-width: 75px;
+    }
 
-	}
+    @include tablet {
+      min-width: 75px;
+    }
+  }
 
+  &__menu {
+    font-size: 15px;
 
-	&__menu {
-		font-size: 15px;
+    @include desktop {
+      font-size: 15px;
+    }
 
-		@include desktop {
-			font-size: 15px;
-			
-		}
+    @include tablet {
+      font-size: 15px;
+    }
 
-		@include tablet {
-			font-size: 15px;
-		}
-		
+    &-list {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
 
-		&-list {
-			white-space: nowrap;
-			display: flex;
-			align-items: center;
-			column-gap: 40px;
-			
+      @include desktop {
+        column-gap: 25px;
+        flex-wrap: wrap;
+      }
+    }
 
-			@include desktop {
-				column-gap: 25px;
-				flex-wrap: wrap;
-			}
-			
-		}
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: 48px;
 
-		&-link {
-			color: var(--color-light);
-			display: inline-flex;
-			align-items: center;
-			height: 48px;
+      &.active {
+        color: var(--color-accent);
+        font-weight: 600;
+      }
 
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
 
-
-		&:hover{
-			color: var(--color-accent);
-		}
-
-		}
-		
-	}
-
-	&__button {
-		white-space: nowrap;
-
-	}
+  &__button {
+    white-space: nowrap;
+  }
 }

@@ -2,9 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import '../styles/CreateBlogPage.css';
-
-function CreateBlogPage({ addPost }) {
+function CreateProjectPage({ addPost }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
@@ -45,4 +43,4 @@ function CreateBlogPage({ addPost }) {
   );
 }
 
-export default CreateBlogPage;
+export default CreateProjectPage;

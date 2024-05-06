@@ -1,32 +1,36 @@
 .hero-report {
-	display: flex;
-	flex-direction: column;
-	row-gap: var(--section-padding-y);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--section-padding-y);
 
-	&__main {
-		margin-top: 50px;
-		display: flex;
-		align-content: center;
-		justify-content: center;
-	}
+  &__main {
+    margin-top: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
 
-	&__body {
-		display: flex;
-		flex-direction: column;
-		color: var(--color-light);
-		max-width: 1048px;
-		row-gap: 15px;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-light);
+    max-width: 1048px;
+    row-gap: 15px;
 
-		h1 {
-			font-family: 'Inter', sans-serif;
-			font-size: 100px;
+    h1 {
+      font-family: Balkara;
+      font-size: 100px;
 
-			@include desktop {
-				font-size: 64px;
-			}
-		}
+      @include desktop {
+        font-size: 64px;
+      }
+    }
 
-	}
-
-	}
-	
+    h2 {
+      margin: 0;
+    }
+  }
+}

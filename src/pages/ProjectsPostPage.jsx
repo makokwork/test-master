@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-function BlogPostPage({ posts }) {
+import Projects from './Projects';
+
+function ProjectsPostPage({ posts }) {
   let { id } = useParams();
 
   // Находим пост блога по id
@@ -36,4 +38,4 @@ function BlogPostPage({ posts }) {
   );
 }
 
-export default BlogPostPage;
+export default ProjectsPostPage;

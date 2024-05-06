@@ -12,7 +12,11 @@
       padding-left: 35px;
       padding-bottom: 25px;
 
-      h4 {
+      &.documents-page {
+        border: 1px solid #d6d9de;
+      }
+
+      & h4 {
         font-weight: 600;
       }
 

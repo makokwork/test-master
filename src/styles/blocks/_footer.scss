@@ -1,213 +1,197 @@
 .footer {
-	padding-bottom: 25px;
-	border-top: 1px solid rgba(236, 28, 36, 0.5);
+  padding-bottom: 25px;
+  border-top: 1px solid rgba(236, 28, 36, 0.5);
 
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-	}
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	&__navigation {
-		margin-top: 35px;
-		display: flex;
-		flex-wrap: wrap;
-		align-content: flex-start;
-	}
+  &__navigation {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
 
-	&__socials {
-		display: flex;
-		column-gap: 43px;
+  &__socials {
+    display: flex;
+    column-gap: 43px;
 
-		@include tablet {
-				
-			@include mobile-above {
-				column-gap: 10px;
-			}
-		}
+    @include tablet {
+      @include mobile-above {
+        column-gap: 10px;
+      }
+    }
 
-		@include mobile {
-				
-			@include mobile-s-above {
-				flex-direction: column;
-				row-gap: 20px;
-				margin-right: 5px;
-			}
-		}
+    @include mobile {
+      @include mobile-s-above {
+        flex-direction: column;
+        row-gap: 20px;
+        margin-right: 5px;
+      }
+    }
 
-		@include mobile-s {
-			flex-direction: column;
-			row-gap: 15px;
-			margin-right: 5px;
-		}
+    @include mobile-s {
+      flex-direction: column;
+      row-gap: 15px;
+      margin-right: 5px;
+    }
 
-		&__list {
-			display: flex;
-			flex-direction: column;
-			column-gap: 10px;
-			}
+    &__list {
+      display: flex;
+      flex-direction: column;
+      column-gap: 10px;
+    }
+  }
 
-	}
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 
-	ul {
-		display: flex;
-		flex-direction: column;
-		row-gap: 10px;
+    li {
+      @include hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+  h5 {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.3);
+  }
 
-		li {
-			@include hover {
-				color: var(--color-accent);
-			}
-		}
+  &__body {
+    margin-top: 35px;
+    border-left: 1px solid rgba(164, 168, 180, 0.5);
+    padding-left: 60px;
 
-	}
-		h5 {
-			margin: 0;
-			color: rgba(0, 0, 0, 0.3);
-		}
+    @include tablet {
+      @include mobile-above {
+        padding-left: 15px;
+        margin-left: 15px;
+      }
+    }
 
+    @include mobile {
+      @include mobile-s-above {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+      }
+    }
 
-		&__body {
-			margin-top: 35px;
-			border-left: 1px solid rgba(164, 168, 180, 0.5);
-			padding-left: 60px;
+    @include mobile-s {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0;
+    }
 
+    &-hyperlink {
+      font-size: 34px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(236, 28, 36, 1);
 
-			@include tablet {
-				
-				@include mobile-above {
-					padding-left: 15px;
-					margin-left: 15px;
-				}
-			}
+      @include hover {
+        color: var(--color-accent);
+      }
 
-			@include mobile {
-				
-				@include mobile-s-above {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					padding-left: 0;
-				}
-			}
+      @include tablet {
+        @include mobile-above {
+          font-size: 24px;
+        }
+      }
 
-			@include mobile-s {
-				display: flex;
-					flex-direction: column;
-					align-items: center;
-					padding-left: 0;
-			}
+      @include mobile {
+        @include mobile-s-above {
+          font-size: 24px;
+        }
+      }
 
+      @include mobile-s {
+        font-size: 24px;
+      }
+    }
 
-			&-hyperlink {
-				font-size: 34px;
-				font-weight: 700;
-				border-bottom: 1px solid rgba(236, 28, 36, 1);
-				
-				@include hover {
-					color: var(--color-accent);
-				}
+    p {
+      margin-top: 35px;
+      font-size: 18px;
+    }
 
-				@include tablet {
-				
-					@include mobile-above {
-						font-size: 24px;
-					}
-				}
-	
-				@include mobile {
-					
-					@include mobile-s-above {
-						font-size: 24px;
-					}
-				}
-	
-				@include mobile-s {
-					font-size: 24px;
-				}
-			}
+    &-extra {
+      display: flex;
+      flex-direction: row;
+      column-gap: 23px;
+      align-items: flex-end;
 
-			p {
-				margin-top: 35px;
-				font-size: 18px;
-			}
+      @include tablet {
+        @include mobile-above {
+          align-items: center;
+          flex-direction: column;
+          row-gap: 15px;
+        }
+      }
 
-			&-extra {
-				display: flex;
-				flex-direction: row;
-				column-gap: 23px;
-				align-items: flex-end;
+      @include mobile {
+        @include mobile-s-above {
+          flex-direction: column;
+          align-items: center;
+          row-gap: 15px;
+        }
+      }
 
-				@include tablet {
-				
-					@include mobile-above {
-						align-items: center;
-						flex-direction: column;
-						row-gap: 15px;
-					}
-				}
+      @include mobile-s {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+      }
 
-				@include mobile {
-				
-					@include mobile-s-above {
-						flex-direction: column;
-						align-items: center;
-						row-gap: 15px;
-					}
-				}
+      p {
+        text-decoration: none;
+        @include hover {
+          color: black;
+        }
+      }
+    }
 
-				@include mobile-s {
-					flex-direction: column;
-						align-items: center;
-						row-gap: 15px;
-				}
+    input {
+      padding-top: 15px;
+      padding-left: 12px;
+      padding-bottom: 15px;
+      background-color: transparent;
+      height: 50px;
+      border: 1px solid #757575;
+      border-radius: 6px;
 
-				p {
-					text-decoration: none;
-					@include hover {
-						color: black;
-					}
-				}
-			}
+      @include tablet {
+        @include mobile-above {
+          padding-right: 0;
+        }
+      }
 
-			input {
-				padding-top: 15px;
-				padding-left: 12px;
-				padding-bottom: 15px;
-				background-color: transparent;
-				height: 50px;
-				border: 1px solid #757575;
-				border-radius: 6px;
+      @include mobile {
+        @include mobile-s-above {
+          width: 70%;
+          padding-right: 0;
+        }
+      }
 
-				@include tablet {
-				
-					@include mobile-above {
-						padding-right: 0;
-					}
-				}
+      @include mobile-s {
+        width: 70%;
+        padding-right: 0;
+      }
+    }
 
-				@include mobile {
-				
-					@include mobile-s-above {
-						width: 70%;
-						padding-right: 0;
-					}
-				}
-
-				@include mobile-s {
-					width: 70%;
-					padding-right: 0;
-				}
-
-
-			}
-
-			&-textplaceholder {
-				display: flex;
-				justify-content: center;
-			}
-
-		}
-
-
-	
+    &-textplaceholder {
+      display: flex;
+      @include mobile {
+        @include mobile-s-above {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
 }

@@ -1,14 +1,11 @@
 import React from 'react';
+import Hero from '../components/Hero';
 
-function Company() {
-  return (
-    <main class="content">
-      <section class="section-upper container">
-        <div class="section__body">
-          <div class="hero">
+{
+  /* <div class="hero">
             <div class="hero__main">
               <div class="hero__body">
-                f<h1 class="hero__title">Центр Единство</h1>
+                <h1 class="hero__title main-page">Центр Единство</h1>
                 <div class="hero__description">
                   <h2>Опора России</h2>
                 </div>
@@ -23,9 +20,12 @@ function Company() {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </div> */
+}
+function Company() {
+  return (
+    <main class="content">
+      <Hero />
 
       <section class="section container">
         <div class="section__body">

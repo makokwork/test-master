@@ -4,7 +4,7 @@ export function usePosts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const savedPosts = JSON.parse(localStorage.getItem('blogPosts'));
+    const savedPosts = JSON.parse(localStorage.getItem('projectPosts'));
     if (savedPosts) {
       setPosts(savedPosts);
     }
@@ -12,7 +12,7 @@ export function usePosts() {
 
   // Сохранение списка постов в localStorage при каждом обновлении
   useEffect(() => {
-    localStorage.setItem('blogPosts', JSON.stringify(posts));
+    localStorage.setItem('projectPosts', JSON.stringify(posts));
   }, [posts]);
 
   const addPost = (newPost) => {
