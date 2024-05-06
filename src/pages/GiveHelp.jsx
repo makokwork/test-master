@@ -1,8 +1,11 @@
 import React from 'react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 function GiveHelp() {
   return (
     <>
+      <Header />
       <section className="section container-about">
         <header className="section__header">
           <h2 className="section__title">Каждый может помочь</h2>
@@ -161,6 +164,7 @@ function GiveHelp() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

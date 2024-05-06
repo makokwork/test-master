@@ -1,9 +1,6 @@
 // App.js
 import { Route, Routes } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-
 import CreateProjectPage from './pages/CreateProjectPage';
 import ProjectsPostPage from './pages/ProjectsPostPage';
 import AboutUs from './pages/AboutUs';
@@ -13,6 +10,7 @@ import GetHelp from './pages/GetHelp';
 import GiveHelp from './pages/GiveHelp';
 import Projects from './pages/Projects';
 import Reports from './pages/Reports';
+import Blog from './pages/Blog';
 import Login from './pages/admin/Login';
 import Admin from './pages/admin/Admin';
 
@@ -25,7 +23,6 @@ function App() {
 
   return (
     <div>
-      <Header />
       <Routes>
         <Route path="/" element={<Company />} />
         <Route path="/about" element={<AboutUs />} />
@@ -39,10 +36,11 @@ function App() {
         <Route path="/create" element={<CreateProjectPage addPost={addPost} />} />
         <Route path="/blog/:id" element={<ProjectsPostPage posts={posts} />} />
 
+        <Route path="/blog" element={<Blog />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

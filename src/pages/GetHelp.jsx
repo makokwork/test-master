@@ -1,8 +1,10 @@
 import React from 'react';
-
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 function GetHelp() {
   return (
     <div>
+      <Header />
       <section className="section container-about">
         <header className="section__header">
           <h2 className="section__title">Получить помощь</h2>
@@ -167,6 +169,7 @@ function GetHelp() {
           </section>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 {
   /* <div class="hero">
@@ -25,6 +27,7 @@ import Hero from '../components/Hero';
 function Company() {
   return (
     <main class="content">
+      <Header />
       <Hero />
 
       <section class="section container">
@@ -578,6 +581,7 @@ function Company() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
 
     /* // <section className="section-report container-about">

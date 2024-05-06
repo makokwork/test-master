@@ -1,7 +1,10 @@
 import Hero from '../components/Hero';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 const Reports = () => {
   return (
     <div>
+      <Header />
       <Hero />
 
       <section>
@@ -260,6 +263,7 @@ const Reports = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

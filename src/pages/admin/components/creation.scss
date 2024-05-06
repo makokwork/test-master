@@ -1,0 +1,27 @@
+@import '../../../styles/styles.scss';
+
+.creation {
+  margin-left: 30px;
+  width: 700px;
+  border: 2px solid #dfe5ef;
+  border-radius: 16px;
+}
+
+.creation-title {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 50px;
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.admin-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 50px;
+}

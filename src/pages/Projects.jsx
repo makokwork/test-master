@@ -2,10 +2,13 @@ import React from 'react';
 import ProjectPost from './ProjectPost';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Projects({ posts }) {
   return (
     <>
+      <Header />
       <Hero />
 
       <section className="section container-about">
@@ -26,6 +29,7 @@ function Projects({ posts }) {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

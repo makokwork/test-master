@@ -1,5 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 {
   /* <div class="hero">
@@ -15,6 +17,7 @@ import Hero from '../components/Hero';
 function AboutUs() {
   return (
     <>
+      <Header />
       <Hero />
 
       <section class="section container-about">
@@ -234,6 +237,7 @@ function AboutUs() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
