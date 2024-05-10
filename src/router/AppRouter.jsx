@@ -1,17 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from './index.ts';
-
 import AboutUs from '../pages/AboutPage/AboutPage.jsx';
-import ProjectPost from '../pages/ProjectsPage/ProjectPost.jsx';
 import Reports from '../pages/ReportsPage/Reports.jsx';
 import Documents from '../pages/DocumentsPage/Documents.jsx';
 import GetHelp from '../pages/GetHelpPage/GetHelp.jsx';
 import GiveHelp from '../pages/GiveHelpPage/GiveHelp.jsx';
-import Blog from '../pages/BlogPage/Blog.jsx';
 import Home from '../pages/HomePage/Home.jsx';
-import ProjectsPost from '../pages/ProjectsPage/ProjectsPost.jsx';
-
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 

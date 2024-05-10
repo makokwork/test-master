@@ -22,7 +22,7 @@ export const publicRoutes: IRoute[] = [
 
 export const privateRoutes: IRoute[] = [
   {
-    path: RouteNames.ADMIN,
+    path: RouteNames.ADMIN + '/*',
     exact: true,
     component: Admin,
   },

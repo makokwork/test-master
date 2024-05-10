@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import BlogCreation from './components/BlogCreation';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import './admin.scss';
 import 'easymde/dist/easymde.min.css';
 import { useAuth } from '../../hooks/useAuth';
+import BlogCreation from './components/BlogCreation'
 
 const Admin = () => {
   const { logout } = useAuth();
@@ -52,7 +52,9 @@ const Admin = () => {
           </div>
         </nav>
         <div className="main__content">
-          <BlogCreation />
+          <Routes>
+            <Route path="blog" element={<BlogCreation />} />
+          </Routes>
         </div>
       </main>
     </>
