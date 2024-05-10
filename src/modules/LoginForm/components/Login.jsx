@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import users from '../../../users.json';
+import { useAuth } from '../../../hooks/useAuth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -14,6 +15,7 @@ const Login = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const navigate = useNavigate();
+  const { setIsAuth } = useAuth();
 
   useEffect(() => {
     if (emailError || passwordError) {
@@ -47,6 +49,7 @@ const Login = () => {
   };
 
   const blurHadler = (e) => {
+    // eslint-disable-next-line default-case
     switch (e.target.name) {
       case 'email':
         setEmailDirty(true);
@@ -74,7 +77,8 @@ const Login = () => {
     const user = users.find((user) => user.email === email);
     if (user && user.password === password) {
       localStorage.setItem('isAuth', true);
-      navigate('/');
+      setIsAuth(true);
+      navigate('/admin');
     }
   }
 

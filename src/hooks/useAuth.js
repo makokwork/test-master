@@ -6,22 +6,10 @@ export const useAuth = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleStorageChange = () => {
-      setIsAuth(localStorage.getItem('isAuth') === 'true');
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    }
-  }, [])
-
   const logout = () => {
     localStorage.removeItem('isAuth');
-    navigate('/');
+    navigate('/login');
   }
 
-  return { isAuth, logout }
+  return { isAuth, setIsAuth, logout }
 }
