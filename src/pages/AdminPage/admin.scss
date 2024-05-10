@@ -84,7 +84,8 @@
       font-size: 18px;
       color: #5a6a85;
 
-      &:hover {
+      &:hover,
+      &:active {
         align-content: center;
         transition: var(--transition-duration);
         border-radius: 6px;
