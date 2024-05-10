@@ -1,3 +1,4 @@
+import { reports } from './DataReports';
 import ReportsItem from './ReportsItem';
 function ReportsList() {
   return (
@@ -5,7 +6,9 @@ function ReportsList() {
       <div className="section-main-reports__body">
         <div className="reports">
           <ul className="reports__list">
-            <ReportsItem />
+            {reports.map(report => (
+              <ReportsItem key={report.id} report={report} />
+            ))}
             {/* <li className="reports__item">
               <details className="reports__accordion">
                 <summary className="reports__accordion-header">
