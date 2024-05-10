@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import BlogCreation from './components/BlogCreation';
+import Button from '@mui/material/Button';
 import './admin.scss';
+import 'easymde/dist/easymde.min.css';
 
 const Admin = () => {
   return (
@@ -40,6 +42,9 @@ const Admin = () => {
                 <p>Обращения</p>
               </NavLink>
             </div>
+            <Button size="large" variant="contained">
+              Выйти из аккаунта
+            </Button>
             <div className="nav-menu__title-line"></div>
           </div>
         </nav>

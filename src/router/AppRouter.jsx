@@ -15,15 +15,14 @@ import ProjectsPost from '../pages/ProjectsPage/ProjectsPost.jsx';
 import { Navigate } from 'react-router-dom';
 
 const AppRouter = () => {
-  const isAuth = false;
+  const isAuth = true;
 
   return (
     <Routes>
-      {isAuth && (
-        privateRoutes.map(route => (
+      {isAuth &&
+        privateRoutes.map((route) => (
           <Route key={route.path} path={route.path} element={<route.component />} />
-        ))
-      )}
+        ))}
       {publicRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.component />} />
       ))}
