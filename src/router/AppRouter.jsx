@@ -16,28 +16,26 @@ import { Navigate } from 'react-router-dom';
 
 const AppRouter = () => {
   const isAuth = false;
+
   return (
     <Routes>
-      {isAuth ? (
-        privateRoutes.map((route) => (
+      {isAuth && (
+        privateRoutes.map(route => (
           <Route key={route.path} path={route.path} element={<route.component />} />
         ))
-      ) : (
-        <>
-          {publicRoutes.map((route) => (
-            <Route key={route.path} path={route.path} element={<route.component />} />
-          ))}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/projects" element={<Home />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/documents" element={<Documents />} />
-          <Route path="/gethelp" element={<GetHelp />} />
-          <Route path="/givehelp" element={<GiveHelp />} />
-          {/* <Route path="/blog" element={<Blog />} /> */}
-          <Route path="/login" element={<Navigate to="/login" />} />
-        </>
       )}
+      {publicRoutes.map((route) => (
+        <Route key={route.path} path={route.path} element={<route.component />} />
+      ))}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/projects" element={<Home />} />
+      <Route path="/reports" element={<Reports />} />
+      <Route path="/documents" element={<Documents />} />
+      <Route path="/gethelp" element={<GetHelp />} />
+      <Route path="/givehelp" element={<GiveHelp />} />
+      {/* <Route path="/blog" element={<Blog />} /> */}
+      <Route path="/login" element={<Navigate to="/login" />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
