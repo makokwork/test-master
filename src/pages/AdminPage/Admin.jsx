@@ -24,7 +24,7 @@ const Admin = () => {
             <h3>Управление контентом</h3>
             <div className="nav-menu__content">
               <ul>
-                <NavLink to="/projects">
+                <NavLink to="projects">
                   <li>Проекты</li>
                 </NavLink>
 

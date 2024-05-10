@@ -66,6 +66,7 @@ export const AddPost = () => {
           <Button size="large">Отмена</Button>
         </a>
       </div>
+      ХУЙ!
     </Paper>
   );
 };
