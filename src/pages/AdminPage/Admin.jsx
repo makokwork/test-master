@@ -14,7 +14,9 @@ const Admin = () => {
       <main className="main">
         <nav className="nav-menu">
           <div className="nav-menu__title">
-            <h2>ЦЕНТР ЕДИНСТВО</h2>
+            <NavLink to="/">
+              <h2>ЦЕНТР ЕДИНСТВО</h2>
+            </NavLink>
             <div className="nav-menu__title-line"></div>
           </div>
           <div className="nav-menu__wrapper">
