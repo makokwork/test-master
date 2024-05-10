@@ -1,0 +1,31 @@
+.score {
+  .score-bg-1 {
+    background: linear-gradient(135deg, #d5691b 0%, #2f2fab 100%);
+  }
+  .score-bg-2 {
+    background: linear-gradient(135deg, #32856c 1.32%, #2f2fab 100%);
+  }
+
+  .score-bg-3 {
+    background: linear-gradient(135deg, #5da9a9 0%, #2f2fab 100%);
+  }
+
+  .score-bg-4 {
+    background: linear-gradient(135deg, #d51b1b 0%, #2f2fab 100%);
+  }
+  &__list {
+    margin-bottom: 160px;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 2fr);
+    }
+
+    @include mobile-s {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 43px;
+  }
+}

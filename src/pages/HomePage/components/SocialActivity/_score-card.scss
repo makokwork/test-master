@@ -1,0 +1,28 @@
+.score-card {
+  min-width: 155px;
+  height: 185px;
+  color: white;
+  border-radius: var(--border-radius-small);
+
+  &__body {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 25px;
+    flex-direction: column;
+    row-gap: 25px;
+    font-size: 16px;
+
+    @include mobile {
+      @include mobile-s-above {
+        padding-left: 10px;
+        padding-top: 0;
+      }
+    }
+
+    h3 {
+      font-size: 60px;
+      font-weight: 700;
+      text-wrap: nowrap;
+    }
+  }
+}

@@ -1,9 +1,0 @@
-.blog-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.posts-container {
-  max-width: 800px;
-  margin-top: 20px; /* Дополнительный отступ между блог-постами и кнопкой */
-}
