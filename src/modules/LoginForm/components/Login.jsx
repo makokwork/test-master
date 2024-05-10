@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import users from '../../../users.json';
 
 const Login = () => {
@@ -12,6 +12,9 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('Значение поля не может быть пустым');
   const [formValid, setFormValid] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (emailError || passwordError) {
       setFormValid(false);
@@ -65,6 +68,16 @@ const Login = () => {
     }
   };
 
+  const authorization = (e) => {
+    e.preventDefault();
+
+    const user = users.find((user) => user.email === email);
+    if (user && user.password === password) {
+      localStorage.setItem('isAuth', true);
+      navigate('/');
+    }
+  }
+
   // Если произошла успешная авторизация, перенаправляем на страницу /admin
   if (loggedIn) {
     return <Navigate to="/admin" replace />;
@@ -96,7 +109,7 @@ const Login = () => {
                 type="password"
                 placeholder="Введите свой пароль"
               />
-              <button disabled={!formValid} className="button" type="submit">
+              <button onClick={authorization} disabled={!formValid} className="button">
                 Авторизироваться
               </button>
             </div>

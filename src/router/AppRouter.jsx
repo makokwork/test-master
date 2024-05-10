@@ -13,9 +13,10 @@ import Home from '../pages/HomePage/Home.jsx';
 import ProjectsPost from '../pages/ProjectsPage/ProjectsPost.jsx';
 
 import { Navigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth.js';
 
 const AppRouter = () => {
-  const isAuth = false;
+  const { isAuth } = useAuth();
 
   return (
     <Routes>
