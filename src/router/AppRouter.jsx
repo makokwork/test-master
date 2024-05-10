@@ -20,11 +20,10 @@ const AppRouter = () => {
 
   return (
     <Routes>
-      {isAuth && (
-        privateRoutes.map(route => (
+      {isAuth &&
+        privateRoutes.map((route) => (
           <Route key={route.path} path={route.path} element={<route.component />} />
-        ))
-      )}
+        ))}
       {publicRoutes.map((route) => (
         <Route key={route.path} path={route.path} element={<route.component />} />
       ))}
