@@ -11,10 +11,6 @@ export const AddPost = () => {
   const imageUrl = '';
   const [value, setValue] = React.useState('');
 
-  const handleChangeFile = () => {};
-
-  const onClickRemoveImage = () => {};
-
   const onChange = React.useCallback((value) => {
     setValue(value);
   }, []);
@@ -35,39 +31,32 @@ export const AddPost = () => {
   );
 
   return (
-    <Paper style={{ padding: 30 }}>
-      <Button variant="outlined" size="large">
-        Загрузить превью
-      </Button>
-      <input type="file" onChange={handleChangeFile} hidden />
-      {imageUrl && (
-        <Button variant="contained" color="error" onClick={onClickRemoveImage}>
-          Удалить
-        </Button>
-      )}
-      {imageUrl && (
-        <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
-      )}
-      <br />
-      <br />
-      <TextField
-        classes={{ root: styles.title }}
-        variant="standard"
-        placeholder="Заголовок статьи..."
-        fullWidth
-      />
+    <>
+      <h2>Добавление проекта на странице "Проекты"</h2>
+      <Paper style={{ padding: 30 }}>
+        {imageUrl && (
+          <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
+        )}
+        <br />
+        <br />
+        <TextField
+          classes={{ root: styles.title }}
+          variant="standard"
+          placeholder="Заголовок..."
+          fullWidth
+        />
 
-      <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
-      <div className={styles.buttons}>
-        <Button size="large" variant="contained">
-          Опубликовать
-        </Button>
-        <a href="/admin">
-          <Button size="large">Отмена</Button>
-        </a>
-      </div>
-      ХУЙ!
-    </Paper>
+        <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
+        <div className={styles.buttons}>
+          <Button size="large" variant="contained">
+            Опубликовать
+          </Button>
+          <a href="/admin">
+            <Button size="large">Отмена</Button>
+          </a>
+        </div>
+      </Paper>
+    </>
   );
 };
 

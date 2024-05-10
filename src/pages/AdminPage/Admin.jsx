@@ -6,6 +6,10 @@ import 'easymde/dist/easymde.min.css';
 import { useAuth } from '../../hooks/useAuth';
 import BlogCreation from './components/BlogCreation/BlogCreation';
 import ProjectsCreation from './components/ProjectsCreation/ProjectsCreation';
+import ReportsCreation from './components/ReportsCreation/ReportsCreation';
+import DocumentsCreation from './components/DocumentsCreation/DocumentsCreation';
+import GetHelpCreation from './components/GetHelpCreaton/GetHelpCreation';
+import GiveHelpCreation from './components/GiveHelpCreation/GiveHelpCreation';
 
 const Admin = () => {
   const { logout } = useAuth();
@@ -36,7 +40,7 @@ const Admin = () => {
                   <li>Документы</li>
                 </NavLink>
 
-                <NavLink to="help-others">
+                <NavLink to="give-help">
                   <li>Помочь другим</li>
                 </NavLink>
 
@@ -61,6 +65,10 @@ const Admin = () => {
         <div className="main__content">
           <Routes>
             <Route path="blog" element={<BlogCreation />} />
+            <Route path="reports" element={<ReportsCreation />} />
+            <Route path="get-help" element={<GetHelpCreation />} />
+            <Route path="give-help" element={<GiveHelpCreation />} />
+            <Route path="documents" element={<DocumentsCreation />} />
             <Route path="projects" element={<ProjectsCreation />} />
           </Routes>
         </div>
