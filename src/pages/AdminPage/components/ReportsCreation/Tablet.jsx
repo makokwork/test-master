@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ChangeButton from './ChangeButton';
+import DeleteButton from './DeleteButton';
 
 function createData(name, calories, fat, carbs, protein, price) {
   return {
@@ -49,8 +51,8 @@ function Row(props) {
           {row.name}
         </TableCell>
         <TableCell align="right">
-          <button className="button">Удалить секцию</button>
-          <button className="button change">Изменить секцию</button>
+          <DeleteButton />
+          <ChangeButton />
         </TableCell>
       </TableRow>
       <TableRow>

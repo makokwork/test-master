@@ -34,6 +34,9 @@ export const AddPost = () => {
     <>
       <h2>Добавление проекта на странице "Проекты"</h2>
       <Paper style={{ padding: 30 }}>
+        <Button variant="outlined" size="large">
+          Загрузить превью
+        </Button>
         {imageUrl && (
           <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
         )}
