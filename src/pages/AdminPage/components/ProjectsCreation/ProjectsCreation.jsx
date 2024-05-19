@@ -1,64 +1,31 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-import SimpleMDE from 'react-simplemde-editor';
+
+import EditorComponent from '../../../../modules/EditorJs/EditorComponent';
 
 import 'easymde/dist/easymde.min.css';
-import styles from './AddPost.module.scss';
 
 export const AddPost = () => {
-  const imageUrl = '';
-  const [value, setValue] = React.useState('');
-
-  const onChange = React.useCallback((value) => {
-    setValue(value);
-  }, []);
-
-  const options = React.useMemo(
-    () => ({
-      spellChecker: false,
-      maxHeight: '400px',
-      autofocus: true,
-      placeholder: 'Введите текст...',
-      status: false,
-      autosave: {
-        enabled: true,
-        delay: 1000,
-      },
-    }),
-    [],
-  );
-
   return (
     <>
-      <h2>Добавление проекта на странице "Проекты"</h2>
-      <Paper style={{ padding: 30 }}>
-        <Button variant="outlined" size="large">
-          Загрузить превью
-        </Button>
-        {imageUrl && (
-          <img className={styles.image} src={`http://localhost:4444${imageUrl}`} alt="Uploaded" />
-        )}
-        <br />
-        <br />
-        <TextField
-          classes={{ root: styles.title }}
-          variant="standard"
-          placeholder="Заголовок..."
-          fullWidth
-        />
+      <section className="message section container">
+        <h2>Добавление проекта на странице "Проекты"</h2>
 
-        <SimpleMDE className={styles.editor} value={value} onChange={onChange} options={options} />
-        <div className={styles.buttons}>
-          <Button size="large" variant="contained">
-            Опубликовать
+        <Paper style={{ padding: 30 }} elevation={3}>
+          <form className="message-form">
+            <div className="message-form-body">
+              <input name="email" type="text" placeholder="Заголовок..." />
+            </div>
+          </form>
+          <EditorComponent />
+          <Button variant="outlined" size="large">
+            Загрузить превью
           </Button>
-          <a href="/admin">
-            <Button size="large">Отмена</Button>
-          </a>
-        </div>
-      </Paper>
+        </Paper>
+        <Button style={{ marginTop: '30px' }} size="large" variant="contained">
+          Опубликовать
+        </Button>
+      </section>
     </>
   );
 };

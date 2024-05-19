@@ -17,11 +17,9 @@ const DocumentsCreation = () => {
                   placeholder="Введите название документа | Пример: Свидетельство о государственной регистрации юридического лица"
                 />
 
-                <input
-                  name="text"
-                  type="text"
-                  placeholder="Добавьте сюда файл в формате word / excel / pdf"
-                />
+                <div className="button-form">
+                  <input className="input-file" type="file" />
+                </div>
                 <Button size="large" variant="contained">
                   Опубликовать
                 </Button>

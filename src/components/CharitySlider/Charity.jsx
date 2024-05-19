@@ -1,4 +1,3 @@
-import Partners from './Partners';
 import CharitySlider from './CharitySlider';
 function Charity() {
   return (
@@ -17,7 +16,6 @@ function Charity() {
         </div>
       </header>
       <CharitySlider />
-      <Partners />
     </section>
   );
 }

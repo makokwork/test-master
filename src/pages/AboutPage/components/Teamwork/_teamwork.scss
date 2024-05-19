@@ -1,16 +1,22 @@
 .teamwork {
-	display: flex;
-	column-gap: 100px;
+  display: flex;
+  column-gap: 100px;
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-		row-gap: 100px;
-	}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+  }
 
-	&__image {
-		img {
-			max-width: max-content;
-		}
-	}
+  &__image {
+    img {
+      max-width: max-content;
+
+      @include desktop {
+        @include tablet-above {
+          width: 500px;
+        }
+      }
+    }
+  }
 }

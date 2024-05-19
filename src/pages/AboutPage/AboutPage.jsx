@@ -4,8 +4,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import About from './components/About/About';
 import Teamwork from './components/Teamwork/Teamwork';
-import Charity from '../../components/CharitySlider/Charity';
 import Family from './components/Teamwork/Family';
+import Charity from '../../components/CharitySlider/Charity';
 
 function AboutUs() {
   return (

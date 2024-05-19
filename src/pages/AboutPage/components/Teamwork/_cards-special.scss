@@ -1,24 +1,19 @@
 .cards-special {
-	min-width: 295px;
-	height: 225px;
-	background-color: #D51B1B;
-	color: white;
-	border-radius: var(--border-radius-small);
+  min-width: 295px;
+  height: 225px;
+  background-color: #d51b1b;
+  color: white;
+  border-radius: var(--border-radius-small);
 
-	
+  &__body {
+    display: flex;
+    padding-left: 21px;
+    padding-top: 18px;
+    flex-direction: column;
+    row-gap: 30px;
 
-	&__body {
-		display: flex;
-		padding-left: 21px;
-		padding-top: 18px;
-		flex-direction: column;
-		row-gap: 30px;
-
-		p {
-			font-size: 16px;
-			max-width: 85%;
-		}
-
-	}
-
-	}
+    p {
+      max-width: 90%;
+    }
+  }
+}

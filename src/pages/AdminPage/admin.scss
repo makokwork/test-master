@@ -13,8 +13,6 @@
   margin-top: 20px;
   margin-left: 33px;
   width: 300px;
-  height: 100vh;
-
   border-right: 1px solid #eaeff4;
 
   h2 {
@@ -84,8 +82,7 @@
       font-size: 18px;
       color: #5a6a85;
 
-      &:hover,
-      &:active {
+      &:hover {
         align-content: center;
         transition: var(--transition-duration);
         border-radius: 6px;
@@ -100,4 +97,18 @@
       }
     }
   }
+}
+
+.current-link {
+  align-content: center;
+  transition: var(--transition-duration);
+  border-radius: 6px;
+  margin-left: -30px;
+  height: 50px;
+  background-color: #5d87ff;
+  color: white !important;
+  font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
 }

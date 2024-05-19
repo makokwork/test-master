@@ -14,7 +14,9 @@ const GiveHelpCreation = () => {
                 <input name="text" type="text" placeholder="Введите название товара" />
 
                 <input name="text" type="text" placeholder="Введите его цену" />
-                <input name="text" type="text" placeholder="Добавьте изображение" />
+                <div className="button-form">
+                  <input className="input-file" type="file" />
+                </div>
                 <Button size="large" variant="contained">
                   Опубликовать
                 </Button>

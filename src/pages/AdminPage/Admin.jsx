@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import './admin.scss';
@@ -13,6 +13,13 @@ import GiveHelpCreation from './components/GiveHelpCreation/GiveHelpCreation';
 
 const Admin = () => {
   const { logout } = useAuth();
+
+  const [activeLink, setActiveLink] = useState(null);
+
+  // Функция-обработчик клика по ссылке
+  const handleClick = (index) => {
+    setActiveLink(index);
+  };
 
   return (
     <>
@@ -29,32 +36,53 @@ const Admin = () => {
             <div className="nav-menu__content">
               <ul>
                 <NavLink to="projects">
-                  <li>Проекты</li>
+                  <li
+                    className={activeLink === 1 ? 'current-link' : ''}
+                    onClick={() => handleClick(1)}>
+                    Проекты
+                  </li>
                 </NavLink>
 
                 <NavLink to="reports">
-                  <li>Отчеты</li>
+                  <li
+                    className={activeLink === 2 ? 'current-link' : ''}
+                    onClick={() => handleClick(2)}>
+                    Отчеты
+                  </li>
                 </NavLink>
 
                 <NavLink to="documents">
-                  <li>Документы</li>
+                  <li
+                    className={activeLink === 3 ? 'current-link' : ''}
+                    onClick={() => handleClick(3)}>
+                    Документы
+                  </li>
                 </NavLink>
 
                 <NavLink to="give-help">
-                  <li>Помочь другим</li>
+                  <li
+                    className={activeLink === 4 ? 'current-link' : ''}
+                    onClick={() => handleClick(4)}>
+                    Помочь другим
+                  </li>
                 </NavLink>
 
                 <NavLink to="get-help">
-                  <li>Получить помощь</li>
+                  <li
+                    className={activeLink === 5 ? 'current-link' : ''}
+                    onClick={() => handleClick(5)}>
+                    Получить помощь
+                  </li>
                 </NavLink>
 
                 <NavLink to="blog">
-                  <li>Блог</li>
+                  <li
+                    className={activeLink === 6 ? 'current-link' : ''}
+                    onClick={() => handleClick(6)}>
+                    Блог
+                  </li>
                 </NavLink>
               </ul>
-              <NavLink to="appeals">
-                <p>Обращения</p>
-              </NavLink>
             </div>
             <Button onClick={logout} size="large" variant="contained">
               Выйти из аккаунта

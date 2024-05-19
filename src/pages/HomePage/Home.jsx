@@ -9,6 +9,7 @@ import Trust from './components/Trust/Trust';
 import Charity from '../../components/CharitySlider/Charity';
 import Documents from './components/Documents/Documents';
 import Banner from './components/Banner/Banner';
+import Partners from '../../components/CharitySlider/Partners';
 import Hero from '../../components/Hero/Hero';
 
 function Company() {
@@ -20,7 +21,7 @@ function Company() {
       <Videoholder />
       <SocialActivity />
       <Charity />
-
+      <Partners />
       <Trust />
       <Documents />
       <Banner />

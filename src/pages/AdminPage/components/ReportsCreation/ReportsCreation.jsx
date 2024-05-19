@@ -22,11 +22,10 @@ const ReportsCreation = () => {
                   type="text"
                   placeholder="Введите название отчёта.  | (Например: Отчёт за I квартал 2024 г.)"
                 />
-                <input
-                  name="text"
-                  type="text"
-                  placeholder="Добавьте сюда файл в формате word / excel / pdf"
-                />
+                <div className="button-form">
+                  <input className="input-file" type="file" />
+                </div>
+
                 <Button size="large" variant="contained">
                   Опубликовать
                 </Button>

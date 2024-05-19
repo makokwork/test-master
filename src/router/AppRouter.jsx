@@ -7,6 +7,8 @@ import Documents from '../pages/DocumentsPage/Documents.jsx';
 import GetHelp from '../pages/GetHelpPage/GetHelp.jsx';
 import GiveHelp from '../pages/GiveHelpPage/GiveHelp.jsx';
 import Home from '../pages/HomePage/Home.jsx';
+import Projects from '../pages/ProjectsPage/Projects.jsx';
+import Blog from '../pages/BlogPage/Blog.jsx';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 
@@ -24,12 +26,12 @@ const AppRouter = () => {
       ))}
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<AboutUs />} />
-      <Route path="/projects" element={<Home />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="/reports" element={<Reports />} />
       <Route path="/documents" element={<Documents />} />
       <Route path="/gethelp" element={<GetHelp />} />
       <Route path="/givehelp" element={<GiveHelp />} />
-      {/* <Route path="/blog" element={<Blog />} /> */}
+      <Route path="/blog" element={<Blog />} />
       <Route path="/login" element={<Navigate to="/login" />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
