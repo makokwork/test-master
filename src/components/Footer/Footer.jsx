@@ -41,7 +41,7 @@ function Footer() {
                   </NavLink>
                 </li>
                 <li className="socials__item">
-                  <NavLink to="/" className="socials__link" onClick={scrollToTop}>
+                  <NavLink to="/policy" className="socials__link" onClick={scrollToTop}>
                     Политика <br /> конфиденциальности
                   </NavLink>
                 </li>

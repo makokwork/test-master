@@ -1,0 +1,37 @@
+.blog {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 120px;
+    column-gap: 190px;
+
+    @include desktop {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-item {
+      width: 500px;
+      height: 700px;
+
+      .image {
+        img {
+          height: 500px;
+          width: 500px;
+          border: 1px solid royalblue;
+        }
+      }
+    }
+    h3 {
+      margin: 0;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -13,6 +13,17 @@ function Header() {
   ) {
     headerClass = 'header content-pages';
   }
+
+  let buttonMobile = 'header__burger-button burger-button visible-mobile alternative';
+
+  if (
+    location.pathname === '/' ||
+    location.pathname === '/about' ||
+    location.pathname === '/projects' ||
+    location.pathname === '/reports'
+  ) {
+    buttonMobile = 'header__burger-button burger-button visible-mobile';
+  }
   return (
     <header className={headerClass}>
       <div className="header__inner container">
@@ -84,12 +95,12 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <button className="header__button button hidden-mobile" type="button">
+        <button class="header__button button hidden-mobile" type="button">
           Связаться с нами
         </button>
 
         <button
-          className="header__burger-button burger-button visible-mobile"
+          className={buttonMobile}
           type="button"
           // onclick="mobileOverlay.showModal()" Нужен onClick(function)
         >

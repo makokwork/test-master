@@ -8,9 +8,10 @@ import GetHelp from '../pages/GetHelpPage/GetHelp.jsx';
 import GiveHelp from '../pages/GiveHelpPage/GiveHelp.jsx';
 import Home from '../pages/HomePage/Home.jsx';
 import Projects from '../pages/ProjectsPage/Projects.jsx';
-import Blog from '../pages/BlogPage/Blog.jsx';
+import Blogs from '../pages/BlogPage/Blogs.jsx';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
+import Policy from '../pages/PolicyPage/Policy.jsx';
 
 const AppRouter = () => {
   const { isAuth } = useAuth();
@@ -31,7 +32,8 @@ const AppRouter = () => {
       <Route path="/documents" element={<Documents />} />
       <Route path="/gethelp" element={<GetHelp />} />
       <Route path="/givehelp" element={<GiveHelp />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog" element={<Blogs />} />
+      <Route path="/policy" element={<Policy />} />
       <Route path="/login" element={<Navigate to="/login" />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
