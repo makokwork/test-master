@@ -16,6 +16,7 @@ function Slider() {
         }}
         modules={[Pagination]}
         className="mySwiper"
+        loop
       >
         <SwiperSlide>
           <img src="assets/partnership.png" alt="" />
