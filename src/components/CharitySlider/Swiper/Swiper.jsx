@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
 function Slider() {
   return (
     <section className="section container-about">
@@ -15,16 +14,33 @@ function Slider() {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
-      >
+        className="mySwiper">
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img
+            src="./images/section-charity-1.jpg"
+            width="350"
+            height="500"
+            alt="Люди"
+            loading="lazy"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img
+            src="./images/section-charity-2.jpg"
+            width="350"
+            height="500"
+            alt="Люди"
+            loading="lazy"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img
+            src="./images/section-charity-3.jpg"
+            width="350"
+            height="500"
+            alt="Люди"
+            loading="lazy"
+          />
         </SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
