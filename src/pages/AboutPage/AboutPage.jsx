@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import About from './components/About/About';
 import Teamwork from './components/Teamwork/Teamwork';
 import Family from './components/Teamwork/Family';
-import Charity from '../../components/CharitySlider/Charity';
+import Slider from '../../components/CharitySlider/Swiper/Swiper';
 
 function AboutUs() {
   return (
@@ -14,7 +14,7 @@ function AboutUs() {
       <Hero />
       <About />
       <Teamwork />
-      <Charity />
+      <Slider />
       <Family />
       <Footer />
     </>
