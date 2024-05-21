@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import ContactModalButton from '../ContactModalButton/ContactModalButton';
 
 function Header() {
   const location = useLocation();
@@ -95,9 +96,9 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <button class="header__button button hidden-mobile" type="button">
+        <ContactModalButton className="header__button button hidden-mobile">
           Связаться с нами
-        </button>
+        </ContactModalButton>
 
         <button
           className={buttonMobile}

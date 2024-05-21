@@ -1,15 +1,6 @@
-import Contact from '../../../../components/Contact/Contact';
-import { useState } from 'react';
+import ContactModalButton from '../../../../components/ContactModalButton/ContactModalButton';
+
 function Banner() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   return (
     <section className="section container">
       <div className="section__body">
@@ -18,17 +9,9 @@ function Banner() {
           <h3 className="banner-partnership__description">
             Есть желание помогать другим людям? Свяжитесь с нами!
           </h3>
-          <button className="banner-partnership__button button" onClick={openModal}>
+          <ContactModalButton className={"banner-partnership__button button"}>
             Связаться с нами
-          </button>
-
-          {isModalOpen && (
-            <div className="modal-overlay">
-              <div className="modal-content">
-                <Contact />
-              </div>
-            </div>
-          )}
+          </ContactModalButton>
         </div>
       </div>
     </section>

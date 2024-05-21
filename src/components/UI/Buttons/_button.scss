@@ -19,6 +19,17 @@
     background-color: #7f1d1d;
     color: whitesmoke;
   }
+
+  &__gray {
+    color: gray;
+    border: 1px solid gray;
+    background: transparent;
+
+    &:hover {
+      background-color: gray;
+      color: #fff;
+    }
+  }
 }
 
 .change {

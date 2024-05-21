@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import ContactModalButton from '../ContactModalButton/ContactModalButton';
 
 function Hero() {
   const location = useLocation();
@@ -56,9 +57,9 @@ function Hero() {
               <h2>{headerInfo.subtitle}</h2>
               <p>{headerInfo.description}</p>
               {location.pathname === '/' && (
-                <button class="hero__button button" onclick="desktopOverlay.showModal()">
+                <ContactModalButton className={'hero__button button'}>
                   Свяжитесь с нами
-                </button>
+                </ContactModalButton>
               )}
             </div>
           </div>
