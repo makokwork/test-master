@@ -1,56 +1,45 @@
 .charity-photos {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
 
+    @include desktop {
+      @include mobile-s-above {
+        align-items: center;
+        flex-direction: column;
+        row-gap: 50px;
+      }
+    }
 
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		padding-bottom: 160px;
+    // @include mobile {
 
-		@include desktop {
-				
-			@include mobile-s-above {
-				align-items: center;
-				flex-direction: column;
-				row-gap: 50px;
-			}
-		}
+    // 	@include mobile-s-above {
+    // 		font-size: 24px;
+    // 	}
+    // }
 
-		// @include mobile {
-			
-		// 	@include mobile-s-above {
-		// 		font-size: 24px;
-		// 	}
-		// }
+    // @include mobile-s {
+    // 	font-size: 24px;
+    // }
 
-		// @include mobile-s {
-		// 	font-size: 24px;
-		// }
+    figure {
+      max-width: 350px;
+      margin: 0;
+      &:last-child {
+        margin-right: 0;
+      }
 
-		figure {
-			max-width: 350px;
-			margin: 0;
-			&:last-child {
-				margin-right: 0;
-			}
+      img {
+        max-width: inherit;
+      }
+    }
 
-			img {
-				max-width: inherit;
-			}
+    figcaption {
+      padding-top: 25px;
 
-		}
-
-		figcaption {
-			padding-top: 25px;
-		
-			@include mobile {
-				padding-top: 15px;
-			}
-		}
-	}
-
-	
-
-
-
+      @include mobile {
+        padding-top: 15px;
+      }
+    }
+  }
 }
-
