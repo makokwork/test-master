@@ -8,6 +8,12 @@
     margin-top: 60px;
   }
 
+  &-slide {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__slide__desc {
     margin-top: 34px;
     font-size: 18px;
