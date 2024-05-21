@@ -14,7 +14,13 @@ function Slider() {
           clickable: true,
         }}
         modules={[Pagination]}
+<<<<<<< HEAD
         className="mySwiper">
+=======
+        className="mySwiper"
+        loop
+      >
+>>>>>>> e625df681202416d072d1a5d2c34d882b699b932
         <SwiperSlide>
           <img
             src="./images/section-charity-1.jpg"
