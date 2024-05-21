@@ -10,6 +10,7 @@ function Slider() {
     <section className="section container-about">
       <Swiper
         slidesPerView={3}
+        slidesPerGroup={3}
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -19,20 +20,29 @@ function Slider() {
         loop
       >
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img src="images/slide/slide1.png" alt="slide1" />
+          <p className='swiper__slide__desc'>Открытие благотворительной ярмарки в городе Город</p>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img src="images/slide/slide2.png" alt="slide2" />
+          <p className='swiper__slide__desc'>Сбор гуманитарной помощи участникам СВО</p>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="assets/partnership.png" alt="" />
+          <img src="images/slide/slide3.png" alt="slide3" />
+          <p className='swiper__slide__desc'>Выступление на важных общественных мероприятиях</p>
         </SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <img src="images/slide/slide4.png" alt="slide4" />
+          <p className='swiper__slide__desc'>Крестный ход в Ростове-на-Дону</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="images/slide/slide5.png" alt="slide5" />
+          <p className='swiper__slide__desc'>Сбор гуманитарной помощи участникам СВО</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="images/slide/slide6.png" alt="slide6" />
+          <p className='swiper__slide__desc'>Выступление на важных общественных мероприятиях</p>
+        </SwiperSlide>
       </Swiper>
     </section>
   );
