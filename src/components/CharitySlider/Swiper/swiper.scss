@@ -1,0 +1,9 @@
+.swiper {
+  transition-duration: var(transition-duration);
+  width: 100%;
+  height: 300px;
+
+  &-pagination {
+    transition-duration: var(transition-duration);
+  }
+}

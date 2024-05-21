@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { red } from '@mui/material/colors';
+
 function Contact() {
   const [isAgreed, setIsAgreed] = useState(false);
 
