@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
 function Slider() {
   return (
     <section className="section container-about">
@@ -16,9 +15,7 @@ function Slider() {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
-        loop
-      >
+        className="mySwiper">
         <SwiperSlide>
           <img src="images/slide/slide1.png" alt="slide1" />
           <p className='swiper__slide__desc'>Открытие благотворительной ярмарки в городе Город</p>
