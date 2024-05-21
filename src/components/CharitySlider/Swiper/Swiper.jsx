@@ -8,13 +8,21 @@ function Slider() {
   return (
     <section className="section container-about">
       <Swiper
-        slidesPerView={3}
-        slidesPerGroup={3}
         spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
+        breakpoints={{
+          1160: {
+            slidesPerView: 3,
+            slidesPerGroup: 3
+          },
+          790: {
+            slidesPerView: 2,
+            slidesPerGroup: 2
+          },
+        }}
         className="mySwiper"
         loop
       >
