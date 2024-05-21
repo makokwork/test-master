@@ -1,46 +1,38 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const swiper = new Swiper('.swiper', {
-  modules: [Navigation, Pagination],
-
-  direction: 'horizontal',
-  loop: true,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
 
 function Slider() {
   return (
     <section className="section container-about">
-      <div className="swiper">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">хуй</div>
-          <div className="swiper-slide">
-            <img src="/src/assets/partnership.png" alt="" />
-          </div>
-          <div className="swiper-slide">
-            <img src="/src/assets/partnership.png" alt="" />
-          </div>
-        </div>
-        <div className="swiper-pagination"></div>
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
-      </div>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="assets/partnership.png" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="assets/partnership.png" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="assets/partnership.png" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
     </section>
   );
 }
