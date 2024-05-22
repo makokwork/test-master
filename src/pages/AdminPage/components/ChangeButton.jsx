@@ -22,6 +22,8 @@ export default function FormDialog() {
       <button className="button change" onClick={handleClickOpen}>
         Изменить секцию
       </button>
+
+      <button className="button">Добавить элемент</button>
       <Dialog
         open={open}
         onClose={handleClose}
