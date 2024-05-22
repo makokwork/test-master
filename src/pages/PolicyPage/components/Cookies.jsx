@@ -4,7 +4,7 @@ import Alert from '@mui/material/Alert';
 import { Button } from '@mui/material';
 
 const Cookies = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const cookiesAccepted = localStorage.getItem('cookiesAccepted');
