@@ -52,9 +52,9 @@ function Row(props) {
           {row.name}
         </TableCell>
         <TableCell align="right">
-          <DeleteButton />
-          <ChangeButton />
-          <AddButton />
+          <DeleteButton name={'секцию'} />
+          <ChangeButton name={'название'} />
+          <AddButton name={'элемент'} />
         </TableCell>
       </TableRow>
       <TableRow>
@@ -78,8 +78,8 @@ function Row(props) {
                         {historyRow.name}
                       </TableCell>
                       <TableCell component="th" scope="row">
-                        <button className="button">Удалить элемент</button>
-                        <button className="button change">Изменить элемент</button>
+                        <DeleteButton name={'секцию'} />
+                        <ChangeButton name={'секцию'} />
                       </TableCell>
                     </TableRow>
                   ))}

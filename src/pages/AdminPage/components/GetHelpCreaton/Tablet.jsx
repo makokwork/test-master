@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import '../../../../styles/styles.scss';
+import DeleteButton from '../DeleteButton';
+import ChangeButton from '../ChangeButton';
 
 function createData(name, text) {
   return { name, text };
@@ -36,8 +38,8 @@ export default function BasicTable() {
               </TableCell>
               <TableCell align="right">{row.text}</TableCell>
               <TableCell align="right">
-                <button className="button">Удалить </button>
-                <button className="button change">Изменить </button>
+                <DeleteButton name={'вопрос'} />
+                <ChangeButton name={'вопрос'} />
               </TableCell>
             </TableRow>
           ))}

@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function FormDialog() {
+export default function FormDialog({ name }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -20,7 +20,7 @@ export default function FormDialog() {
   return (
     <React.Fragment>
       <button className="button change" onClick={handleClickOpen}>
-        Изменить секцию
+        Изменить {name}
       </button>
 
       <Dialog
@@ -37,7 +37,7 @@ export default function FormDialog() {
             handleClose();
           },
         }}>
-        <DialogTitle>Изменить секцию</DialogTitle>
+        <DialogTitle>Изменить {name}</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -45,7 +45,7 @@ export default function FormDialog() {
             margin="dense"
             id="title"
             name="title"
-            label="Название секции"
+            label="Название "
             type="title"
             fullWidth
             variant="standard"

@@ -7,7 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-export default function ResponsiveDialog() {
+export default function ResponsiveDialog({ name }) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -23,7 +23,7 @@ export default function ResponsiveDialog() {
   return (
     <React.Fragment>
       <button className="button" onClick={handleClickOpen}>
-        Удалить секцию
+        Удалить {name}
       </button>
       <Dialog
         fullScreen={fullScreen}
@@ -31,7 +31,7 @@ export default function ResponsiveDialog() {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title">
         <DialogTitle id="responsive-dialog-title">
-          {'Вы уверены что хотите удалить секцию?'}
+          {`Вы уверены что хотите удалить ${name}?`}
         </DialogTitle>
 
         <DialogActions>

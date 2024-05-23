@@ -45,7 +45,7 @@ export default function FormDialog({ name }) {
             margin="dense"
             id="title"
             name="title"
-            label={`Название ${name}`}
+            label="Название"
             type="title"
             fullWidth
             variant="standard"
