@@ -15,6 +15,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ChangeButton from '../ChangeButton';
 import DeleteButton from '../DeleteButton';
+import AddButton from '../AddButton';
 
 function createData(name, calories, fat, carbs, protein, price) {
   return {
@@ -53,6 +54,7 @@ function Row(props) {
         <TableCell align="right">
           <DeleteButton />
           <ChangeButton />
+          <AddButton />
         </TableCell>
       </TableRow>
       <TableRow>
@@ -75,7 +77,6 @@ function Row(props) {
                       <TableCell component="th" scope="row">
                         {historyRow.name}
                       </TableCell>
-
                       <TableCell component="th" scope="row">
                         <button className="button">Удалить элемент</button>
                         <button className="button change">Изменить элемент</button>

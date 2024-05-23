@@ -19,8 +19,8 @@ export default function FormDialog() {
 
   return (
     <React.Fragment>
-      <button className="button change" onClick={handleClickOpen}>
-        Изменить секцию
+      <button className="button add" onClick={handleClickOpen}>
+        Добавить элемент
       </button>
 
       <Dialog
@@ -37,7 +37,7 @@ export default function FormDialog() {
             handleClose();
           },
         }}>
-        <DialogTitle>Изменить секцию</DialogTitle>
+        <DialogTitle>Добавить элемент</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -45,7 +45,7 @@ export default function FormDialog() {
             margin="dense"
             id="title"
             name="title"
-            label="Название секции"
+            label="Название элемента"
             type="title"
             fullWidth
             variant="standard"
