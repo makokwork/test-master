@@ -14,17 +14,20 @@
   z-index: 20;
 
   &__block {
-    display: flex;
-    gap: 21px;
     background-color: #fff;
     border-radius: 10px;
     padding: 24px;
     color: #000;
-    max-width: 1200px;
   }
 }
 
-.modal__content {
+.contact {
+  display: flex;
+  gap: 21px;
+  max-width: 1200px;
+}
+
+.contact__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,3 +1,4 @@
+import { YMaps } from '@pbe/react-yandex-maps';
 import Cookies from './pages/PolicyPage/components/Cookies';
 import AppRouter from './router/AppRouter';
 import './styles/styles.scss';
@@ -5,8 +6,10 @@ import './styles/styles.scss';
 function App() {
   return (
     <>
-      <AppRouter />
-      <Cookies />
+      <YMaps>
+        <AppRouter />
+        <Cookies />
+      </YMaps>
     </>
   );
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import ContactModalButton from '../ContactModalButton/ContactModalButton';
+import MobileHeader from './MobileHeader/MobileHeader';
 
 function Header() {
+  const [isOpenMobileHeader, setIsOpenMobileHeader] = useState(false);
   const location = useLocation();
   let headerClass = 'header document-pages';
 
@@ -48,49 +50,49 @@ function Header() {
         <nav className="header__menu hidden-mobile">
           <ul className="header__menu-list">
             <li className="header__menu-item">
-              <NavLink to="/" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Компания
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/about" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/about" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 О нас
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/projects" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/projects" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Проекты
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/reports" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/reports" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Отчеты
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/documents" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/documents" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Документы
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/gethelp" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/gethelp" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Получить помощь
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/givehelp" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/givehelp" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Помочь другим
               </NavLink>
             </li>
 
             <li className="header__menu-item">
-              <NavLink to="/blog" className="header__menu-link" activeClassName="current-page">
+              <NavLink to="/blog" className={({ isActive }) => `header__menu-link ${isActive ? 'current-page' : ''}`}>
                 Блог
               </NavLink>
             </li>
@@ -100,13 +102,16 @@ function Header() {
           Связаться с нами
         </ContactModalButton>
 
-        <button
-          className={buttonMobile}
-          type="button"
-          // onclick="mobileOverlay.showModal()" Нужен onClick(function)
-        >
-          <span className="visually-hidden">Открыть меню навигации</span>
-        </button>
+        {!isOpenMobileHeader && (
+          <button
+            className={buttonMobile}
+            type="button"
+            onClick={() => setIsOpenMobileHeader(true)}
+          >
+            <span className="visually-hidden">Открыть меню навигации</span>
+          </button>
+        )}
+        <MobileHeader isOpen={isOpenMobileHeader} onClose={() => setIsOpenMobileHeader(false)} />
       </div>
     </header>
   );

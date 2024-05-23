@@ -14,7 +14,7 @@ import Slider from '../../components/CharitySlider/Swiper/Swiper';
 
 function Company() {
   return (
-    <main class="content">
+    <main className="content">
       <Header />
       <Hero />
       <HeroNav />
