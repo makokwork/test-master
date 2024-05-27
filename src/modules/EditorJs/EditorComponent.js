@@ -1,19 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
-import SimpleImage from '@editorjs/simple-image';
+import SimpleImage from './SimpleImage';
 import Link from '@editorjs/link';
 
-const EditorComponent = () => {
-  const ejInstance = useRef(null);
-
-  const initEditor = () => {
-    console.log('Initializing Editor');
+const EditorComponent = ({ editorRef }) => {
+  useEffect(() => {
     const editor = new EditorJS({
       holder: 'editorjs',
       onReady: () => {
-        ejInstance.current = editor;
+        if (editorRef) {
+          editorRef.current = editor;
+        }
         console.log('Editor is ready');
       },
       autofocus: true,
@@ -82,21 +81,15 @@ const EditorComponent = () => {
         },
       },
     });
-  };
-
-  useEffect(() => {
-    if (!ejInstance.current) {
-      initEditor();
-    }
 
     return () => {
-      if (ejInstance.current) {
-        ejInstance.current.destroy();
-        ejInstance.current = null;
+      if (editorRef.current) {
+        editorRef.current.destroy();
+        editorRef.current = null;
         console.log('Editor destroyed');
       }
     };
-  }, []);
+  }, [editorRef]);
 
   return <div id="editorjs"></div>;
 };
