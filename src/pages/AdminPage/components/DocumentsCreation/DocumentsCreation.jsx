@@ -1,18 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
 import Tablet from './Tablet';
+import DocumentsService from '../../../../api/DocumentsAPI/DocumentsService';
+import { useSelector } from 'react-redux';
+import { addDocument, initDocuments, selectDocuments } from '../../../../store/features/documents';
+import { useDispatch } from 'react-redux';
 
 const DocumentsCreation = () => {
-  const [documents, setDocuments] = useState([{ id: 1, title: 'Nogger', body: 'Nogger' }]);
+  const dispatch = useDispatch();
+  const documents = useSelector(selectDocuments);
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const addNewDocument = () => {
-    const newDocument = {
-      title,
-      body,
-    };
-    setDocuments([...documents, newDocuments]);
-  };
+  const [file, setFile] = useState(null);
+  const refFileInput = useRef(null);
+
+  useEffect(() => {
+    DocumentsService.getAll()
+      .then((docs) => dispatch(initDocuments({ documents: docs })))
+      .catch((error) => console.error(error))
+  }, [])
+
+  const createDocument = () => {
+    const documentFormData = new FormData();
+
+    documentFormData.set('name', title);
+    documentFormData.set('file', file);
+
+    DocumentsService.create(documentFormData)
+      .then((data) => {
+        dispatch(addDocument({ document: data }))
+        
+        setTitle('');
+        setFile(null);
+        refFileInput.current.value = null;
+      })
+      .catch((error) => console.error(error))
+  }
+
   return (
     <div>
       <section className="message section container">
@@ -31,13 +54,13 @@ const DocumentsCreation = () => {
 
                 <div className="button-form">
                   <input
-                    value={body}
                     className="input-file"
                     type="file"
-                    onChange={(e) => setBody(e.target.value)}
+                    ref={refFileInput}
+                    onChange={(e) => setFile(e.target.files[0])}
                   />
                 </div>
-                <Button size="large" variant="contained" onClick={addNewDocument}>
+                <Button size="large" variant="contained" onClick={createDocument}>
                   Опубликовать
                 </Button>
               </div>
@@ -45,7 +68,7 @@ const DocumentsCreation = () => {
           </div>
         </div>
       </section>
-      <Tablet />
+      <Tablet documents={documents} />
     </div>
   );
 };

@@ -1,8 +1,24 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import DocumentsService from '../../api/DocumentsAPI/DocumentsService';
+import DocumentsList from '../../components/Documents/DocumentsList';
+import { useDispatch } from 'react-redux';
+import { initDocuments, selectDocuments } from '../../store/features/documents';
+import { useSelector } from 'react-redux';
 
 function Documents() {
+  const dispatch = useDispatch();
+  const documents = useSelector(selectDocuments);
+
+  useEffect(() => {
+    DocumentsService.getAll()
+      .then((docs) => {
+        dispatch(initDocuments({ documents: docs }))
+      })
+      .catch((error) => console.error(error));
+  }, [])
+
   return (
     <>
       <Header />
@@ -12,7 +28,9 @@ function Documents() {
           <h3 className="visually-hidden">Скачивание документов</h3>
         </header>
         <div className="section__body">
-          <div className="documents"></div>
+          <div className="documents">
+            <DocumentsList documents={documents} />
+          </div>
         </div>
       </section>
       <Footer />

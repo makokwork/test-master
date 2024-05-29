@@ -1,7 +1,21 @@
-import axios from 'axios';
+import { authHost, host } from '..';
+
 export default class DocumentsService {
   static async getAll() {
-    const response = await axios.get();
+    const response = await host.get('docs/');
+
+    return response.data;
+  }
+
+  static async create(document) {
+    const response = await authHost.post('docs/create/', document);
+
+    return response.data;
+  }
+
+  static async delete(id) {
+    const response = await authHost.delete(`docs/${id}`);
+
     return response.data;
   }
 }

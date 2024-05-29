@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -6,9 +5,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
 
-export default function ResponsiveDialog({ name }) {
-  const [open, setOpen] = React.useState(false);
+export default function ResponsiveDialog({ document, deleteDocument }) {
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -21,9 +21,9 @@ export default function ResponsiveDialog({ name }) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <button className="button" onClick={handleClickOpen}>
-        Удалить {name}
+        Удалить
       </button>
       <Dialog
         fullScreen={fullScreen}
@@ -31,18 +31,21 @@ export default function ResponsiveDialog({ name }) {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title">
         <DialogTitle id="responsive-dialog-title">
-          {`Вы уверены что хотите удалить ${name}?`}
+          {`Вы уверены что хотите удалить ${document.name}?`}
         </DialogTitle>
 
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
             Отменить
           </Button>
-          <Button onClick={handleClose} autoFocus>
+          <Button onClick={() => {
+            deleteDocument(document.id);
+            handleClose();
+          }} autoFocus>
             Удалить
           </Button>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }

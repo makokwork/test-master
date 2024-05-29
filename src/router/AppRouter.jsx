@@ -21,10 +21,14 @@ const AppRouter = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-          {isAuth &&
-            privateRoutes.map((route) => (
-              <Route key={route.path} path={route.path} element={<route.component />} />
-            ))}
+          {isAuth && (
+            <>
+              {privateRoutes.map((route) => (            
+                <Route key={route.path} path={route.path} element={<route.component />} />
+              ))}
+              <Route path="/login" element={<Navigate to="/admin" replace />} />
+            </>
+          )}
           {publicRoutes.map((route) => (
             <Route key={route.path} path={route.path} element={<route.component />} />
           ))}

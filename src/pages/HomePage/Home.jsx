@@ -1,5 +1,3 @@
-import React from 'react';
-
 import HeroNav from './components/HeroNav/HeroNav';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
