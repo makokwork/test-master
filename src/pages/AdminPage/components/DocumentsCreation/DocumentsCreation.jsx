@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
 import Tablet from './Tablet';
-import DocumentsService from '../../../../api/DocumentsAPI/DocumentsService';
+import DocumentsService from '../../../../API/DocumentsAPI/DocumentsService';
 import { useSelector } from 'react-redux';
 import { addDocument, initDocuments, selectDocuments } from '../../../../store/features/documents';
 import { useDispatch } from 'react-redux';
@@ -16,8 +16,8 @@ const DocumentsCreation = () => {
   useEffect(() => {
     DocumentsService.getAll()
       .then((docs) => dispatch(initDocuments({ documents: docs })))
-      .catch((error) => console.error(error))
-  }, [])
+      .catch((error) => console.error(error));
+  }, []);
 
   const createDocument = () => {
     const documentFormData = new FormData();
@@ -27,14 +27,14 @@ const DocumentsCreation = () => {
 
     DocumentsService.create(documentFormData)
       .then((data) => {
-        dispatch(addDocument({ document: data }))
-        
+        dispatch(addDocument({ document: data }));
+
         setTitle('');
         setFile(null);
         refFileInput.current.value = null;
       })
-      .catch((error) => console.error(error))
-  }
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div>

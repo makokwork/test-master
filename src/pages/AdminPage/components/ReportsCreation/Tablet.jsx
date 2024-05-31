@@ -13,31 +13,11 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import ChangeButton from '../ChangeButton';
-import DeleteButton from '../DeleteButton';
-import AddButton from '../AddButton';
-
-function createData(name, calories, fat, carbs, protein, price) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      {
-        name: 'Отчёт за 1 квартал 2024 года',
-      },
-      {
-        name: 'Отчёт за 2 квартал 2024 года',
-      },
-    ],
-  };
-}
+import ChangeButton from './ChangeButton';
+import DeleteButton from './DeleteButton';
+import AddButton from './AddButton';
 
 function Row(props) {
-  const { row } = props;
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -48,9 +28,7 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
-          {row.name}
-        </TableCell>
+        <TableCell component="th" scope="row"></TableCell>
         <TableCell align="right">
           <DeleteButton name={'секцию'} />
           <ChangeButton name={'название'} />
@@ -72,17 +50,13 @@ function Row(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.name}
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                        <DeleteButton name={'секцию'} />
-                        <ChangeButton name={'секцию'} />
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                  <TableRow>
+                    <TableCell component="th" scope="row"></TableCell>
+                    <TableCell component="th" scope="row">
+                      <DeleteButton name={'секцию'} />
+                      <ChangeButton name={'секцию'} />
+                    </TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </Box>
@@ -93,25 +67,23 @@ function Row(props) {
   );
 }
 
-Row.propTypes = {
-  row: PropTypes.shape({
-    calories: PropTypes.number.isRequired,
-    carbs: PropTypes.number.isRequired,
-    fat: PropTypes.number.isRequired,
-    history: PropTypes.arrayOf(
-      PropTypes.shape({
-        amount: PropTypes.number.isRequired,
-        customerId: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    protein: PropTypes.number.isRequired,
-  }).isRequired,
-};
-
-const rows = [createData('Отчёты за 2024 год')];
+// Row.propTypes = {
+//   row: PropTypes.shape({
+//     calories: PropTypes.number.isRequired,
+//     carbs: PropTypes.number.isRequired,
+//     fat: PropTypes.number.isRequired,
+//     history: PropTypes.arrayOf(
+//       PropTypes.shape({
+//         amount: PropTypes.number.isRequired,
+//         customerId: PropTypes.string.isRequired,
+//         date: PropTypes.string.isRequired,
+//       }),
+//     ).isRequired,
+//     name: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     protein: PropTypes.number.isRequired,
+//   }).isRequired,
+// };
 
 export default function CollapsibleTable() {
   return (
@@ -126,9 +98,7 @@ export default function CollapsibleTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <Row key={row.name} row={row} />
-          ))}
+          <Row />
         </TableBody>
       </Table>
     </TableContainer>

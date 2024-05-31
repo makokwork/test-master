@@ -1,6 +1,6 @@
 import { TableCell, TableRow } from '@mui/material';
 import DeleteButton from '../DeleteButton';
-import DocumentsService from '../../../../api/DocumentsAPI/DocumentsService';
+import DocumentsService from '../../../../API/DocumentsAPI/DocumentsService';
 import { useDispatch } from 'react-redux';
 import { deleteDocument } from '../../../../store/features/documents';
 
@@ -10,10 +10,10 @@ const Document = ({ document }) => {
   const handleDelete = (id) => {
     DocumentsService.delete(id)
       .then((data) => {
-        dispatch(deleteDocument({ id }))
+        dispatch(deleteDocument({ id }));
       })
-      .catch((error) => console.error(error))
-  }
+      .catch((error) => console.error(error));
+  };
 
   return (
     <TableRow key={document.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>

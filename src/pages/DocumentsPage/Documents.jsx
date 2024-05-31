@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import DocumentsService from '../../api/DocumentsAPI/DocumentsService';
+import DocumentsService from '../../API/DocumentsAPI/DocumentsService';
 import DocumentsList from '../../components/Documents/DocumentsList';
 import { useDispatch } from 'react-redux';
 import { initDocuments, selectDocuments } from '../../store/features/documents';
@@ -14,10 +14,10 @@ function Documents() {
   useEffect(() => {
     DocumentsService.getAll()
       .then((docs) => {
-        dispatch(initDocuments({ documents: docs }))
+        dispatch(initDocuments({ documents: docs }));
       })
       .catch((error) => console.error(error));
-  }, [])
+  }, []);
 
   return (
     <>

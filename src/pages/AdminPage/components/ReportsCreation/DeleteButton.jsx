@@ -7,7 +7,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
 
-export default function ResponsiveDialog({ document, deleteDocument }) {
+export default function ResponsiveDialog({}) {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -30,20 +30,13 @@ export default function ResponsiveDialog({ document, deleteDocument }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title">
-        <DialogTitle id="responsive-dialog-title">
-          {`Вы уверены что хотите удалить ${document.name}?`}
-        </DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{`Вы уверены что хотите удалить?`}</DialogTitle>
 
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
             Отменить
           </Button>
-          <Button
-            onClick={() => {
-              deleteDocument(document.id);
-              handleClose();
-            }}
-            autoFocus>
+          <Button onClick={() => {}} autoFocus>
             Удалить
           </Button>
         </DialogActions>

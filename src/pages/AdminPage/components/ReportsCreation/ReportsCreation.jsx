@@ -12,19 +12,10 @@ const ReportsCreation = () => {
               <div className="message-form-body">
                 <h2>Добавление отчёта на странице "Отчёты"</h2>
                 <input
-                  name="email"
+                  name="text"
                   type="text"
                   placeholder="Введите заголовок секции  | (Например: Отчёты за 2024 год)"
                 />
-
-                <input
-                  name="text"
-                  type="text"
-                  placeholder="Введите название отчёта.  | (Например: Отчёт за I квартал 2024 г.)"
-                />
-                <div className="button-form">
-                  <input className="input-file" type="file" />
-                </div>
 
                 <Button size="large" variant="contained">
                   Опубликовать

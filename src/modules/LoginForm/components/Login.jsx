@@ -45,8 +45,8 @@ const Login = () => {
       .then((data) => {
         localStorage.setItem('token', data.access);
       })
-      .catch((error) => setError(error.response.data.error))
-  }
+      .catch((error) => setError(error.response.data.error));
+  };
 
   return (
     <section className="message section container">
@@ -60,7 +60,7 @@ const Login = () => {
                 onChange={(e) => setLogin(e.target.value)}
                 name="login"
                 type="text"
-                placeholder="Введите свой login"
+                placeholder="Введите свой логин"
               />
               {passwordDirty && passwordError && (
                 <div style={{ color: 'red' }}>{passwordError}</div>
@@ -73,9 +73,7 @@ const Login = () => {
                 type="password"
                 placeholder="Введите свой пароль"
               />
-              {error && (
-                <div style={{ color: 'red' }}>{error}</div>
-              )}
+              {error && <div style={{ color: 'red' }}>{error}</div>}
               <button onClick={authorization} disabled={!formValid} className="button">
                 Авторизироваться
               </button>

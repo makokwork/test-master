@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import EditorComponent from '../../../../modules/EditorJs/EditorComponent';
+import Tablet from './Tablet';
 
 import 'easymde/dist/easymde.min.css';
 import '../../../../modules/EditorJs/UI/simple-image.css';
@@ -82,6 +83,7 @@ const AddPost = () => {
           onClick={handlePublish}>
           Опубликовать
         </Button>
+        <Tablet />
       </section>
     </>
   );
