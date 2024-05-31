@@ -1,14 +1,14 @@
 import { TableCell, TableRow } from '@mui/material';
 import DeleteButton from '../DeleteButton';
-import DocumentsService from '../../../../API/DocumentsAPI/DocumentsService';
 import { useDispatch } from 'react-redux';
 import { deleteDocument } from '../../../../store/features/documents';
+import { DocumentsAPI } from '../../../../api';
 
 const Document = ({ document }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    DocumentsService.delete(id)
+    DocumentsAPI.delete(id)
       .then((data) => {
         dispatch(deleteDocument({ id }));
       })

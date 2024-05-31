@@ -1,24 +1,37 @@
+import { useEffect } from 'react';
 import SectionReport from './SectionReport';
+import { useDispatch } from 'react-redux';
+import { addGroupReports, selectGroupReports } from '../../../../store/features/reports';
+import { useSelector } from 'react-redux';
+import { ReportsAPI } from '../../../../api';
 
-function ReportsItem({ report }) {
+function ReportsItem({ reportGroup }) {
+  const reports = useSelector(selectGroupReports).filter((groupReports) => groupReports.id === reportGroup.id);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    ReportsAPI.getAllGroupReports(reportGroup.id)
+      .then((reports) => {
+        dispatch(addGroupReports({ groupId: reportGroup.id, groupReports: reports }));
+      })
+      .catch((error) => console.error(error))
+  }, [dispatch, reportGroup])
+
+  console.log(reports);
+
   return (
     <li className="reports__item">
       <details className="reports__accordion">
         <summary className="reports__accordion-header">
-          <h4 className="reports__accordion-title">{report.title}</h4>
+          <h4 className="reports__accordion-title">{reportGroup.name}</h4>
           <span className="reports__accordion-indicator"></span>
         </summary>
         <div className="reports__accordion-body-title">
           <h5>Отчеты по кварталам</h5>
         </div>
-        {report.sections_reports[0] && report.sections_reports.map(report => (
-          <SectionReport report={report} />
+        {reports[0]?.reports.map(report => (
+          <SectionReport key={report.id} report={report} />
         ))}
-        <div className="reports__accordion-button">
-          <button className="reports__button button" type="button" onclick="handleClick()">
-            Годовой отчет
-          </button>
-        </div>
       </details>
     </li>
   );

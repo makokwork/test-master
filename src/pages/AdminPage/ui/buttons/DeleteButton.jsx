@@ -1,13 +1,12 @@
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useState } from 'react';
 
-export default function ResponsiveDialog({}) {
+const DeleteButton = ({ handleDelete }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -36,7 +35,10 @@ export default function ResponsiveDialog({}) {
           <Button autoFocus onClick={handleClose}>
             Отменить
           </Button>
-          <Button onClick={() => {}} autoFocus>
+          <Button onClick={() => {
+            handleClose();
+            handleDelete();
+          }} autoFocus>
             Удалить
           </Button>
         </DialogActions>
@@ -44,3 +46,5 @@ export default function ResponsiveDialog({}) {
     </>
   );
 }
+
+export default DeleteButton;

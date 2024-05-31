@@ -1,8 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
-import Tablet from './Tablet';
+import { ReportsTablet } from './ReportsTablet';
+import { ReportsAPI } from '../../../../api';
+import { useDispatch } from 'react-redux';
+import { addReportGroup } from '../../../../store/features/reports';
 
 const ReportsCreation = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+
+  const handleCreate = () => {
+    ReportsAPI.createGroup(name)
+      .then((group) => dispatch(addReportGroup({ reportGroup: group })))
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setName('');
+      })
+  }
+
   return (
     <>
       <section className="message section container">
@@ -15,9 +30,15 @@ const ReportsCreation = () => {
                   name="text"
                   type="text"
                   placeholder="Введите заголовок секции  | (Например: Отчёты за 2024 год)"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
 
-                <Button size="large" variant="contained">
+                <Button 
+                  size="large" 
+                  variant="contained" 
+                  onClick={handleCreate}
+                >
                   Опубликовать
                 </Button>
               </div>
@@ -25,7 +46,9 @@ const ReportsCreation = () => {
           </div>
         </div>
       </section>
-      <Tablet />
+      <section>
+        <ReportsTablet />
+      </section>
     </>
   );
 };

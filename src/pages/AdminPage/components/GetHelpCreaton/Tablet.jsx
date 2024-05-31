@@ -7,8 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import '../../../../styles/styles.scss';
-import DeleteButton from '../DeleteButton';
-import ChangeButton from '../ChangeButton';
+import DeleteButton from '../../ui/buttons/DeleteButton';
+import ChangeButton from '../../ui/buttons/ChangeButton';
 
 function createData(name, text) {
   return { name, text };

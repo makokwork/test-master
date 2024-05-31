@@ -1,13 +1,14 @@
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useState } from 'react';
 
-export default function FormDialog({ name }) {
-  const [open, setOpen] = React.useState(false);
+const ChangeButton = ({ name, olderName, handleChange }) => {
+  const [open, setOpen] = useState(false);
+  const [newName, setNewName] = useState(olderName);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,9 +19,9 @@ export default function FormDialog({ name }) {
   };
 
   return (
-    <React.Fragment>
-      <button className="button add" onClick={handleClickOpen}>
-        Добавить {name}
+    <>
+      <button className="button change" onClick={handleClickOpen}>
+        Изменить {name}
       </button>
 
       <Dialog
@@ -30,14 +31,10 @@ export default function FormDialog({ name }) {
           component: 'form',
           onSubmit: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
             handleClose();
           },
         }}>
-        <DialogTitle>Добавить {name}</DialogTitle>
+        <DialogTitle>Изменить {name}</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -45,20 +42,24 @@ export default function FormDialog({ name }) {
             margin="dense"
             id="title"
             name="title"
-            label="Название"
+            label="Название "
             type="title"
             fullWidth
             variant="standard"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
           />
-          <div className="button-form">
-            <input className="input-file" type="file" />
-          </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Отменить</Button>
-          <Button type="submit">Применить</Button>
+          <Button onClick={() => {
+            handleChange(newName);
+            handleClose();
+          }}>Применить</Button>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
+
+export default ChangeButton;

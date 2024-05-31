@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Button from '@mui/material/Button';
 import Tablet from './Tablet';
-import DocumentsService from '../../../../API/DocumentsAPI/DocumentsService';
 import { useSelector } from 'react-redux';
 import { addDocument, initDocuments, selectDocuments } from '../../../../store/features/documents';
 import { useDispatch } from 'react-redux';
+import { DocumentsAPI } from '../../../../api';
 
 const DocumentsCreation = () => {
   const dispatch = useDispatch();
@@ -14,10 +14,10 @@ const DocumentsCreation = () => {
   const refFileInput = useRef(null);
 
   useEffect(() => {
-    DocumentsService.getAll()
+    DocumentsAPI.getAll()
       .then((docs) => dispatch(initDocuments({ documents: docs })))
       .catch((error) => console.error(error));
-  }, []);
+  }, [dispatch]);
 
   const createDocument = () => {
     const documentFormData = new FormData();
@@ -25,7 +25,7 @@ const DocumentsCreation = () => {
     documentFormData.set('name', title);
     documentFormData.set('file', file);
 
-    DocumentsService.create(documentFormData)
+    DocumentsAPI.create(documentFormData)
       .then((data) => {
         dispatch(addDocument({ document: data }));
 

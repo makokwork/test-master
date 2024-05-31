@@ -1,23 +1,23 @@
 import { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import DocumentsService from '../../API/DocumentsAPI/DocumentsService';
 import DocumentsList from '../../components/Documents/DocumentsList';
 import { useDispatch } from 'react-redux';
 import { initDocuments, selectDocuments } from '../../store/features/documents';
 import { useSelector } from 'react-redux';
+import { DocumentsAPI } from '../../api';
 
 function Documents() {
   const dispatch = useDispatch();
   const documents = useSelector(selectDocuments);
 
   useEffect(() => {
-    DocumentsService.getAll()
+    DocumentsAPI.getAll()
       .then((docs) => {
         dispatch(initDocuments({ documents: docs }));
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
@@ -6,6 +7,8 @@ import EditorComponent from '../../../../modules/EditorJs/EditorComponent';
 import 'easymde/dist/easymde.min.css';
 
 export const AddPost = () => {
+  const editorRef = useRef(null);
+
   return (
     <>
       <section className="message section container">
@@ -17,7 +20,7 @@ export const AddPost = () => {
               <input name="email" type="text" placeholder="Заголовок..." />
             </div>
           </form>
-          <EditorComponent />
+          <EditorComponent editorRef={editorRef} />
           <Button variant="outlined" size="large">
             Загрузить превью
           </Button>

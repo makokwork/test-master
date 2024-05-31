@@ -1,20 +1,20 @@
-import { authHost, host } from '..';
+import { $host, $authHost } from "../config";
 
-export default class ProjectsService {
+export class ProjectsService {
   static async getAll() {
-    const response = await host.get('projects/');
+    const response = await $host.get('projects/');
 
     return response.data;
   }
 
   static async create(projects) {
-    const response = await authHost.post('projects/create/', project);
+    const response = await $authHost.post('projects/create/', projects);
 
     return response.data;
   }
 
   static async delete(id) {
-    const response = await authHost.delete(`projects/${id}`);
+    const response = await $authHost.delete(`projects/${id}`);
 
     return response.data;
   }

@@ -1,0 +1,1 @@
+export { ReportsTablet } from './ui/ReportsTablet';

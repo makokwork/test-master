@@ -1,7 +1,7 @@
-import { host } from '../../../API';
+import { $host } from "../../../api/config";
 
 export const auth = async (username, password) => {
-  const response = await host.post('login/', { username, password });
+  const response = await $host.post('login/', { username, password });
 
   return response.data;
 };
