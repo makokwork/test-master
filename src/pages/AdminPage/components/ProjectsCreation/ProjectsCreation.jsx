@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import Tablet from './Tablet';
 
 import EditorComponent from '../../../../modules/EditorJs/EditorComponent';
 
@@ -28,6 +29,7 @@ export const AddPost = () => {
         <Button style={{ marginTop: '30px' }} size="large" variant="contained">
           Опубликовать
         </Button>
+        <Tablet />
       </section>
     </>
   );

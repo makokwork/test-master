@@ -13,7 +13,7 @@ const GiveHelpCreation = () => {
                 <h2>Добавление товаров на странице "Помочь другим"</h2>
                 <input name="text" type="text" placeholder="Введите название товара" />
 
-                <input name="text" type="text" placeholder="Введите его цену" />
+                <input name="text" type="text" placeholder="Введите его цену (только число!)" />
                 <div className="button-form">
                   <input className="input-file" type="file" />
                 </div>

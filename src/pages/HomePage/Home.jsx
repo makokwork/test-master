@@ -23,6 +23,7 @@ function Company() {
       <Trust />
       <Documents />
       <Banner />
+
       <Footer />
     </main>
   );

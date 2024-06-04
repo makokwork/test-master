@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { ReportsTablet } from './ReportsTablet';
-import { ReportsAPI } from '../../../../api';
+import { ReportsAPI } from '../../../../API';
 import { useDispatch } from 'react-redux';
 import { addReportGroup } from '../../../../store/features/reports';
 
@@ -15,8 +15,8 @@ const ReportsCreation = () => {
       .catch((error) => console.error(error))
       .finally(() => {
         setName('');
-      })
-  }
+      });
+  };
 
   return (
     <>
@@ -34,11 +34,7 @@ const ReportsCreation = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
 
-                <Button 
-                  size="large" 
-                  variant="contained" 
-                  onClick={handleCreate}
-                >
+                <Button size="large" variant="contained" onClick={handleCreate}>
                   Опубликовать
                 </Button>
               </div>

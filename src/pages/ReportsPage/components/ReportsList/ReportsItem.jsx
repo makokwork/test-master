@@ -3,10 +3,12 @@ import SectionReport from './SectionReport';
 import { useDispatch } from 'react-redux';
 import { addGroupReports, selectGroupReports } from '../../../../store/features/reports';
 import { useSelector } from 'react-redux';
-import { ReportsAPI } from '../../../../api';
+import { ReportsAPI } from '../../../../API';
 
 function ReportsItem({ reportGroup }) {
-  const reports = useSelector(selectGroupReports).filter((groupReports) => groupReports.id === reportGroup.id);
+  const reports = useSelector(selectGroupReports).filter(
+    (groupReports) => groupReports.id === reportGroup.id,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,8 +16,8 @@ function ReportsItem({ reportGroup }) {
       .then((reports) => {
         dispatch(addGroupReports({ groupId: reportGroup.id, groupReports: reports }));
       })
-      .catch((error) => console.error(error))
-  }, [dispatch, reportGroup])
+      .catch((error) => console.error(error));
+  }, [dispatch, reportGroup]);
 
   console.log(reports);
 
@@ -29,7 +31,7 @@ function ReportsItem({ reportGroup }) {
         <div className="reports__accordion-body-title">
           <h5>Отчеты по кварталам</h5>
         </div>
-        {reports[0]?.reports.map(report => (
+        {reports[0]?.reports.map((report) => (
           <SectionReport key={report.id} report={report} />
         ))}
       </details>

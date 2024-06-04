@@ -2,7 +2,7 @@ import { TableCell, TableRow } from '@mui/material';
 import DeleteButton from '../DeleteButton';
 import { useDispatch } from 'react-redux';
 import { deleteDocument } from '../../../../store/features/documents';
-import { DocumentsAPI } from '../../../../api';
+import { DocumentsAPI } from '../../../../API';
 
 const Document = ({ document }) => {
   const dispatch = useDispatch();

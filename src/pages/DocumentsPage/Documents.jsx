@@ -5,7 +5,7 @@ import DocumentsList from '../../components/Documents/DocumentsList';
 import { useDispatch } from 'react-redux';
 import { initDocuments, selectDocuments } from '../../store/features/documents';
 import { useSelector } from 'react-redux';
-import { DocumentsAPI } from '../../api';
+import { DocumentsAPI } from '../../API';
 
 function Documents() {
   const dispatch = useDispatch();

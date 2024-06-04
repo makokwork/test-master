@@ -1,11 +1,27 @@
 import { useEffect, useState } from 'react';
-import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
+import {
+  Box,
+  Collapse,
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Typography,
+} from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Report from './Report';
-import { ReportsAPI } from '../../../../../../api';
+import { ReportsAPI } from '../../../../../../API';
 import { useSelector } from 'react-redux';
-import { addGroupReports, updateReportGroup, deleteReportGroup, selectGroupReports, addReport } from '../../../../../../store/features/reports';
+import {
+  addGroupReports,
+  updateReportGroup,
+  deleteReportGroup,
+  selectGroupReports,
+  addReport,
+} from '../../../../../../store/features/reports';
 import { useDispatch } from 'react-redux';
 import DeleteButton from '../../../../ui/buttons/DeleteButton';
 import ChangeButton from '../../../../ui/buttons/ChangeButton';
@@ -14,25 +30,27 @@ import AddButton from '../../../../ui/buttons/AddButton';
 export const ReportsGroup = ({ group }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const reports = useSelector(selectGroupReports).filter((reportsGroup) => reportsGroup.id === group.id);
+  const reports = useSelector(selectGroupReports).filter(
+    (reportsGroup) => reportsGroup.id === group.id,
+  );
 
   useEffect(() => {
     ReportsAPI.getAllGroupReports(group.id)
       .then((reports) => dispatch(addGroupReports({ groupId: group.id, groupReports: reports })))
-      .catch((error) => console.error(error))
-  }, [dispatch, group])
+      .catch((error) => console.error(error));
+  }, [dispatch, group]);
 
   const handleDelete = () => {
     ReportsAPI.deleteGroup(group.id)
       .then((data) => dispatch(deleteReportGroup({ id: group.id })))
-      .catch((error) => console.error(error))
-  }
+      .catch((error) => console.error(error));
+  };
 
   const handleUpdate = (name) => {
     ReportsAPI.changeNameGroup(group.id, name)
       .then((reportGroup) => dispatch(updateReportGroup({ reportGroup })))
-      .catch((error) => console.error(error))
-  }
+      .catch((error) => console.error(error));
+  };
 
   const handleCreateReportItem = (name, file) => {
     const reportItemFormData = new FormData();
@@ -40,20 +58,24 @@ export const ReportsGroup = ({ group }) => {
     reportItemFormData.set('name', name);
     reportItemFormData.set('file', file);
     reportItemFormData.set('group', group.id);
-    
+
     ReportsAPI.createReportItem(reportItemFormData)
       .then((report) => dispatch(addReport({ groupId: group.id, report })))
-      .catch((error) => console.error(error))
-  }
+      .catch((error) => console.error(error));
+  };
 
   return (
     <>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
-          <IconButton style={{ marginRight: '8px' }} aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+          <IconButton
+            style={{ marginRight: '8px' }}
+            aria-label="expand row"
+            size="small"
+            onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
-          <span style={{ fontWeight: "bold", fontSize: "18px" }}>{group.name}</span>
+          <span style={{ fontWeight: 'bold', fontSize: '18px' }}>{group.name}</span>
         </TableCell>
         <TableCell align="right">
           <DeleteButton name={'секцию'} handleDelete={handleDelete} />

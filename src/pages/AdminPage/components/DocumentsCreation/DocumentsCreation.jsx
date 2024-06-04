@@ -4,7 +4,7 @@ import Tablet from './Tablet';
 import { useSelector } from 'react-redux';
 import { addDocument, initDocuments, selectDocuments } from '../../../../store/features/documents';
 import { useDispatch } from 'react-redux';
-import { DocumentsAPI } from '../../../../api';
+import { DocumentsAPI } from '../../../../API';
 
 const DocumentsCreation = () => {
   const dispatch = useDispatch();
