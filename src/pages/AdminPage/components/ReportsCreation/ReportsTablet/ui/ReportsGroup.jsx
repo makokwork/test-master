@@ -48,8 +48,8 @@ export const ReportsGroup = ({ group }) => {
 
   const handleUpdate = (name) => {
     ReportsAPI.changeNameGroup(group.id, name)
-      .then((reportGroup) => dispatch(updateReportGroup({ reportGroup })))
-      .catch((error) => console.error(error));
+      .then(reportGroup => dispatch(updateReportGroup({ groupId: group.id, reportGroup })))
+      .catch(err => console.error(err));
   };
 
   const handleCreateReportItem = (name, file) => {
@@ -79,7 +79,7 @@ export const ReportsGroup = ({ group }) => {
         </TableCell>
         <TableCell align="right">
           <DeleteButton name={'секцию'} handleDelete={handleDelete} />
-          <ChangeButton name={'название'} olderName={group.name} onClick={handleUpdate} />
+          <ChangeButton name={'название'} olderName={group.name} handleChange={handleUpdate} />
           <AddButton name={'элемент'} handleCreateReport={handleCreateReportItem} />
         </TableCell>
       </TableRow>

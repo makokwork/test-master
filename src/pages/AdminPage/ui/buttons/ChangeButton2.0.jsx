@@ -4,11 +4,26 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const ChangeButton = ({ name, olderName, handleChange }) => {
+const ChangeButton = ({ name, DataToChange, handleChange }) => {
   const [open, setOpen] = useState(false);
-  const [newName, setNewName] = useState(olderName);
+  const [dataToChange, setDataToChange] = useState(DataToChange);
+  const [infoForInputs, setInfoForInput] = useState([]);
+
+  useEffect(() => {
+    const updatedInfoForInputs = [];
+
+    for (let data of Object.entries(dataToChange)) {
+      updatedInfoForInputs.push({
+        key: data[0],
+        name: data[1]["name"],
+        value: data[1]["value"]
+      });
+    }
+
+    setInfoForInput(updatedInfoForInputs);
+  }, [dataToChange])
 
   return (
     <>
@@ -28,24 +43,33 @@ const ChangeButton = ({ name, olderName, handleChange }) => {
         }}>
         <DialogTitle>Изменить {name}</DialogTitle>
         <DialogContent>
-          <TextField
+          {infoForInputs.map(input => (
+            <TextField
+            key={input.name}
             autoFocus
             required
             margin="dense"
             id="title"
             name="title"
-            label="Название "
+            label={input.name}
             type="title"
             fullWidth
             variant="standard"
-            value={newName}
-            onChange={(e) => setNewName(e.target.value)}
+            value={input.value}
+            onChange={(e) => setDataToChange({
+              ...dataToChange,
+              [input.key]: {
+                ...dataToChange[input.key],
+                value: e.target.value
+              }
+            })}
           />
+          ))}
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Отменить</Button>
           <Button onClick={() => {
-            handleChange(newName);
+            handleChange(dataToChange);
             setOpen(false);
           }}>Применить</Button>
         </DialogActions>

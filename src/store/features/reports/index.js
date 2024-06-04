@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getArrayIndexByObjectId } from './helpers';
+import { getArrayIndexByObjectId } from '../functions/index';
 
 const reportsSlice = createSlice({
   name: 'reports',

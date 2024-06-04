@@ -12,7 +12,6 @@ function GiveHelp() {
       <Finance />
       <HelpList />
       <Shop />
-
       <Footer />
     </>
   );
