@@ -1,21 +1,28 @@
 .cards-about {
-	&__list {
-		&:not(:last-child) {
-			margin-bottom: 25px;
-			
-		}
-	@include desktop {
-		grid-template-columns: repeat(2, 1fr);
-		
-	}
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-	@include tablet {
-		grid-template-columns: repeat(2, 1fr);
-	}
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
+    @include mobile-s-2 {
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
 
-	@include mobile-s {
-		grid-template-columns: repeat(1, 1fr);
-	}
-	}
+    @include mobile-s {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.bottom {
+  grid-template-columns: repeat(1, 1fr);
 }

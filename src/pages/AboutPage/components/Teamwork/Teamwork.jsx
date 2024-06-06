@@ -1,6 +1,6 @@
 function Teamwork() {
   return (
-    <section className="section container-about">
+    <section className="section container-about about">
       <div className="section__body">
         <div className="teamwork">
           <div className="teamwork__content">

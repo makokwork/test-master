@@ -4,7 +4,7 @@ function Finance() {
       <header className="section__header">
         <h2 className="section__title">Каждый может помочь</h2>
       </header>
-      <div className="section__body">
+      <div className="section__body finance">
         <h3 className="visually-hidden">Карты для пожертвований</h3>
         <div className="cards__container">
           <div className="cards__container-bank">

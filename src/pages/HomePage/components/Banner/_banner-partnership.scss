@@ -21,4 +21,9 @@
     margin-top: 65px;
     width: 208px;
   }
+
+  @include mobile {
+    padding-left: 10px;
+    text-align: center;
+  }
 }

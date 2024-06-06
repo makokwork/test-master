@@ -27,6 +27,10 @@
       @include desktop {
         font-size: 64px;
       }
+
+      @include mobile-s-2 {
+        font-size: 40px;
+      }
     }
 
     h2 {

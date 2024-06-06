@@ -76,7 +76,7 @@ function Family() {
               </li>
             </ul>
 
-            <ul className="cards__list grid grid--1">
+            <ul className="cards__list grid grid--1 bottom">
               <li className="cards__item">
                 <article className="cards-special">
                   <div className="cards-special__body">

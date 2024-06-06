@@ -1,134 +1,121 @@
 .reports {
-	&__item {
-			list-style-type: none;
-	}
-	min-width: 890px;
-	&__list {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+  &__item {
+    list-style-type: none;
+  }
 
-	&__accordion {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
 
-		&-button {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 30px;
-		}
-		transition-duration: var(--transition-duration);
+  &__accordion {
+    &-button {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    transition-duration: var(--transition-duration);
 
-		&-body {
-			display: flex;
-			flex-direction: column;
+    &-body {
+      display: flex;
+      flex-direction: column;
 
-			&-title {
-				display: flex;
-				justify-content: center;
+      &-title {
+        display: flex;
+        justify-content: center;
 
-				h5 {
-					font-size: 32px;
-				}
-			}
+        h5 {
+          font-size: 32px;
 
-			&-inner {
-				display: flex;
-				justify-content: space-between;
-				margin-bottom: 25px;
-			}
+          @include mobile {
+            font-size: 28px;
+          }
+        }
+      }
 
-		}
+      &-inner {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+      }
+    }
 
-		&[open] {
+    &[open] {
+      .reports__accordion-header {
+        margin-bottom: 30px;
+        color: #2f2fab;
+      }
 
+      .reports__accordion-indicator::after {
+        rotate: 0deg;
+        transition-duration: var(--transition-duration);
+      }
+    }
 
-			.reports__accordion-header {
-				margin-bottom: 30px;
-				color: #2F2FAB;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 50px;
+      cursor: pointer;
+      user-select: none;
+      padding-left: 20px;
+      border: 1px solid #b2b2b2;
 
-			}
+      @include hover {
+        color: #2f2fab;
+        transition-duration: var(--transition-duration);
+      }
+    }
 
-			.reports__accordion-indicator::after {
-				rotate: 0deg;
-				transition-duration: var(--transition-duration);
+    &-indicator {
+      @include flex-center;
+      width: 50px;
+      height: 50px;
+      position: relative;
+      background-color: white;
 
-			}
-		}
+      &::before,
+      &::after {
+        @include abs-center;
 
-		&-header {
-			
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			column-gap: 50px;
-			cursor: pointer;
-			user-select: none;
-			padding-left: 20px;
-			border: 1px solid #b2b2b2;
+        content: '';
+        width: 50%;
+        height: 10%;
+        background-color: var(--color-dark);
+      }
 
+      &::after {
+        transition-duration: var(--transition-duration);
+        rotate: 90deg;
+      }
+    }
+  }
 
-			@include hover {
-				color: #2F2FAB;
-				transition-duration: var(--transition-duration);
-			}
-		}
+  &__button {
+    @include flex-center(true);
+    width: 167px;
+    height: var(--button-height);
+    padding: 10px;
+    font-size: 15px;
+    color: var(--color-light);
+    font-weight: 600;
+    background-color: #2f2fab;
+    border: none;
+    border-radius: 57px;
+    text-transform: uppercase;
 
-		&-indicator {
-			@include flex-center;
-			width: 50px;
-			height: 50px;
-			position: relative;
-			background-color: white;
-			
-			
+    @include hover {
+      cursor: pointer;
+      background-color: #7f1d1d;
+      color: whitesmoke;
+    }
 
-			&::before, 
-			&::after {
-				@include abs-center;
-
-				content: '';
-				width: 50%;
-				height: 10%;
-				background-color: var(--color-dark);
-				
-				
-			}
-
-			&::after {
-				transition-duration: var(--transition-duration);
-				rotate: 90deg;
-				
-				
-			}
-
-		}
-	}
-
-	&__button {
-		
-			@include flex-center(true);
-			width: 167px;
-			height: var(--button-height);
-			padding: 10px;
-			font-size: 15px;
-			color: var(--color-light);
-			font-weight: 600;
-			background-color: #2F2FAB;
-			border: none;
-			border-radius: 57px;
-			text-transform: uppercase;
-		
-			@include hover {
-				cursor: pointer;
-				background-color: #7f1d1d;
-				color: whitesmoke;
-				
-			}
-
-		
-		
-	}
-
-
-
+    @include mobile {
+      width: 140px;
+      height: 35px;
+    }
+  }
 }

@@ -5,6 +5,10 @@
   color: white;
   border-radius: var(--border-radius-small);
 
+  @include mobile {
+    min-width: fit-content;
+  }
+
   &__body {
     display: flex;
     padding-left: 21px;

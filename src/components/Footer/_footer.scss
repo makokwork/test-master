@@ -5,6 +5,12 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include mobile-s-above {
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+    }
   }
 
   &__navigation {
@@ -12,6 +18,23 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+
+    @include mobile-s-above {
+      @include mobile {
+        display: inline-flex;
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+
+        h5 {
+          font-size: 20px;
+        }
+
+        li {
+          font-size: 18px;
+        }
+      }
+    }
   }
 
   &__socials {
@@ -77,16 +100,13 @@
       @include mobile-s-above {
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding-left: 0;
-      }
-    }
+        border-left: none;
 
-    @include mobile-s {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-left: 0;
+        &-textplaceholder {
+          justify-content: flex-start !important;
+        }
+      }
     }
 
     &-hyperlink {
@@ -122,9 +142,19 @@
 
     &-extra {
       display: flex;
-      flex-direction: row;
-      column-gap: 23px;
       align-items: flex-end;
+      justify-content: space-between;
+
+      .extra-list {
+        display: flex;
+        flex-direction: row;
+        column-gap: 15px;
+
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
 
       @include tablet {
         @include mobile-above {
