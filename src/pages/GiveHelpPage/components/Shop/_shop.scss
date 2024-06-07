@@ -9,6 +9,16 @@
     row-gap: 30px;
     column-gap: 35px;
 
+    @include mobile-above {
+      @include tablet {
+        justify-content: center;
+      }
+    }
+
+    @include mobile {
+      justify-content: center;
+    }
+
     &-item {
       display: flex;
       flex-direction: column;

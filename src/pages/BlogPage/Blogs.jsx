@@ -7,7 +7,14 @@ function Blogs() {
     <>
       <Header />
       <section className="section container-about">
-        <div className="blog__container">
+        <header className="blog">
+          <h1 className="visually-hidden">Страница Блог</h1>
+          <h2>Блог</h2>
+          <h3>Список новостей на тему нашей деятельности</h3>
+        </header>
+
+        <div className="blog-container">
+          <Blog />
           <Blog />
           <Blog />
           <Blog />

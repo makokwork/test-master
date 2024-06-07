@@ -1,20 +1,24 @@
+import { NavLink } from 'react-router-dom';
 function Project() {
   return (
-    <div className="project__container-item">
-      <div className="image">
-        <img src="../../../assets/partnership.png" alt="" />
+    <div className="project-container-item">
+      <div className="project-container-wrapper">
+        <div className="project-container-image">
+          <img src="/images/people_about.png" alt="" />
+        </div>
+        <div className="project-container-title">
+          <h3>Сладкие печеньки сделали немыслимое открытие в области кошачей космонавтики</h3>
+        </div>
+        <div className="project-container-description">
+          Сладкие печеньки сделали немыслимое открытие в области кошачей космонавтики Сладкие
+          печеньки сделали немыслимое открытие в области кошачей космонавтики
+        </div>
+        <div className="project-container-button">
+          <NavLink to="/" className="project-button">
+            Узнать больше
+          </NavLink>
+        </div>
       </div>
-
-      <div className="title">
-        <h3>Помощь детям Донбасса</h3>
-      </div>
-      <div className="description">
-        <p>
-          Это текст, что будет написан редактором, повествующий нам о проекте по ребёнку, что попал
-          в беду. Именно этот текст - пример того, как будет выглядеть много текста.
-        </p>
-      </div>
-      <button className="button">Узнать больше</button>
     </div>
   );
 }

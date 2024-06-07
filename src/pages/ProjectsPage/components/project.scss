@@ -1,37 +1,76 @@
-.project {
-  &__container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 120px;
-    column-gap: 190px;
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 190px;
+  row-gap: 120px;
 
-    @include desktop {
-      flex-direction: column;
-      align-items: center;
+  @include mobile-s-2 {
+    row-gap: 40px;
+  }
+
+  &-item {
+    width: 500px;
+
+    @include mobile-s-2 {
+      width: 300px;
     }
+  }
 
-    &-item {
-      width: 500px;
-      height: 700px;
+  &-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
 
-      .image {
-        img {
-          height: 500px;
-          width: 500px;
-          border: 1px solid royalblue;
-        }
+      @include mobile-s-2 {
+        font-size: 18px;
       }
     }
-    h3 {
-      margin: 0;
-      margin-top: 20px;
-      margin-bottom: 10px;
+  }
+
+  &-description {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    @include mobile-s-2 {
+      font-size: 15px;
+    }
+  }
+
+  &-image {
+    width: 500px;
+    height: 500px;
+
+    @include mobile-s-2 {
+      width: fit-content;
+      height: fit-content;
     }
 
-    p {
-      margin-bottom: 20px;
+    img {
+      height: inherit;
+      width: inherit;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+
+  &-button {
+    .project-button {
+      background-color: #d51b1b;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+
+      @include hover {
+        background-color: #2f2fab;
+      }
+
+      @include mobile-s-2 {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ function Projects() {
       <Header />
       <Hero />
       <section className="section container-about">
-        <div className="project__container">
+        <div className="project-container">
           <Project />
           <Project />
           <Project />
