@@ -7,9 +7,7 @@ const GetHelpItem = ({ FAQ }) => {
           <span className="gethelp__accordion-indicator"></span>
         </summary>
         <div className="gethelp__accordion-body">
-          <p>
-            {FAQ.answer}
-          </p>
+          <p>{FAQ.answer}</p>
         </div>
       </details>
     </li>

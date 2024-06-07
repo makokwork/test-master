@@ -19,9 +19,9 @@ export const Tablet = () => {
 
   useEffect(() => {
     FAQ_API.getAll()
-      .then(FAQ => dispatch(initFAQ({ FAQ })))
-      .catch(err => console.error(err))
-  }, [dispatch])
+      .then((FAQ) => dispatch(initFAQ({ FAQ })))
+      .catch((err) => console.error(err));
+  }, [dispatch]);
 
   return (
     <TableContainer component={Paper}>
@@ -41,4 +41,4 @@ export const Tablet = () => {
       </Table>
     </TableContainer>
   );
-}
+};
