@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
-import SimpleImage from './SimpleImage';
+import ImageTool from '@editorjs/image';
 import Link from '@editorjs/link';
+import AttachesTool from '@editorjs/attaches';
 
 const EditorComponent = ({ editorRef }) => {
   useEffect(() => {
@@ -23,8 +24,14 @@ const EditorComponent = ({ editorRef }) => {
       tools: {
         header: Header,
         list: List,
-        image: SimpleImage,
+        image: ImageTool,
         link: Link,
+        attaches: {
+          class: AttachesTool,
+          config: {
+            endpoint: 'http://localhost:8008/uploadFile',
+          },
+        },
       },
       i18n: {
         messages: {
@@ -54,6 +61,8 @@ const EditorComponent = ({ editorRef }) => {
             Bold: 'Полужирный',
             Italic: 'Курсив',
             InlineCode: 'Моноширинный',
+            Image: 'Изображение',
+            Attachment: 'Файл',
           },
           tools: {
             warning: {

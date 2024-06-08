@@ -1,7 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 function TrustPlatforms() {
+  const location = useLocation();
+  let trustClass = 'trust__platform trust-givehelp';
+
+  if (location.pathname === '/') {
+    trustClass = 'trust__platform';
+  }
+
   return (
-    <div className="trust__platform">
+    <div className={trustClass}>
       <div className="platform__title">
         <h2>Мы на краудфандинговых платформах</h2>
       </div>
