@@ -3,7 +3,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import { useEffect, useState } from 'react';
 import { PostAPI } from '../../API';
-import ContentBlock from './ui/ContentBlock';
+import ContentBlock from './components/ContentBlock';
+import Hero from '../../components/Hero/Hero';
 
 function BlogPage() {
   const [post, setPost] = useState({});
@@ -24,7 +25,7 @@ function BlogPage() {
         <header className="blog-inner">
           <h1>{post.title}</h1>
         </header>
-        <div>
+        <div className="content">
           {post.content?.blocks.map((block) => (
             <ContentBlock key={block.id} block={block} />
           ))}

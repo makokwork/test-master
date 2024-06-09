@@ -12,9 +12,7 @@ const Blog = ({ post }) => {
         <div className="container-title">
           <h3>{post.title}</h3>
         </div>
-        <div className="container-description">
-          {post.excerpt}...
-        </div>
+        <div className="container-description">{post.excerpt}...</div>
         <div className="container-bottom">
           <NavLink to={`/blog/${post.id}`}>Читать полностью</NavLink>
           <p className="container-data">{time}</p>
@@ -22,5 +20,5 @@ const Blog = ({ post }) => {
       </div>
     </div>
   );
-}
+};
 export default Blog;

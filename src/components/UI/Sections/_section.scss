@@ -73,11 +73,8 @@
 
   &-inner {
     display: flex;
+    align-items: center;
     flex-direction: column;
-
-    margin-bottom: 20px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid gray;
 
     h1 {
       font-size: 36px;
@@ -97,5 +94,12 @@
       height: inherit;
       width: inherit;
     }
+  }
+}
+
+.content {
+  a {
+    color: var(--color-accent);
+    font-weight: 600;
   }
 }
