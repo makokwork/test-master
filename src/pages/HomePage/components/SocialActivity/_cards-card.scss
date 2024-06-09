@@ -1,24 +1,39 @@
 .cards-card {
-	min-width: 150px;
-	height: 180px;
-	background-color: #D51B1B;
-	color: white;
-	border-radius: var(--border-radius-small);
+  min-width: 150px;
+  height: 180px;
+  background-color: #d51b1b;
+  color: white;
+  border-radius: var(--border-radius-small);
 
-	
+  @include mobile {
+    h3 {
+      text-align: center;
+    }
 
-	&__body {
-		display: flex;
-		padding-left: 30px;
-		padding-top: 25px;
-		flex-direction: column-reverse;
-		row-gap: 30px;
+    height: 140px;
+  }
 
-	}
+  @include mobile-s-2 {
+    height: 150px;
+  }
 
-	&__image {
-		width: 50px;
-		aspect-ratio: 1;
-	}
+  &__body {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    flex-direction: column-reverse;
+    row-gap: 30px;
 
-	}
+    @include mobile {
+      padding-left: 0;
+      align-items: center;
+      row-gap: 15px;
+    }
+  }
+
+  &__image {
+    width: 50px;
+    aspect-ratio: 1;
+  }
+}
