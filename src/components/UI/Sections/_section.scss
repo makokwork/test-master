@@ -1,6 +1,14 @@
 .section {
   margin-bottom: 160px;
 
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
+  @include mobile-s-2 {
+    margin-bottom: 30px;
+  }
+
   &__header {
     display: flex;
     align-items: center;
