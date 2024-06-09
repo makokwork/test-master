@@ -6,7 +6,7 @@ import ImageTool from '@editorjs/image';
 import Link from '@editorjs/link';
 import AttachesTool from '@editorjs/attaches';
 
-const EditorComponent = ({ editorRef }) => {
+const EditorComponent = ({ editorRef, setContent }) => {
   useEffect(() => {
     const editor = new EditorJS({
       holder: 'editorjs',
@@ -19,7 +19,7 @@ const EditorComponent = ({ editorRef }) => {
       autofocus: true,
       onChange: async () => {
         let content = await editor.saver.save();
-        console.log(content);
+        setContent(content);
       },
       tools: {
         header: Header,

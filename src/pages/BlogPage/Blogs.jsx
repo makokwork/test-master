@@ -1,8 +1,22 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Blog from './components/Blog';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { initPosts, selectPosts } from '../../store/features/posts';
+import { useEffect } from 'react';
+import { PostAPI } from '../../API';
 
 function Blogs() {
+  const dispatch = useDispatch();
+  const posts = useSelector(selectPosts);
+
+  useEffect(() => {
+    PostAPI.getAll()
+      .then(posts => dispatch(initPosts({ posts })))
+      .catch(err => console.error(err))
+  }, [dispatch])
+
   return (
     <>
       <Header />
@@ -14,10 +28,9 @@ function Blogs() {
         </header>
 
         <div className="blog-container">
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
+          {posts.map(post => (
+            <Blog key={post.id} post={post} />
+          ))}
         </div>
       </section>
       <Footer />

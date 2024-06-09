@@ -3,11 +3,13 @@ import { ReportsService as ReportsAPI } from './ReportsAPI/ReportsService';
 import { ProductService as ProductsAPI } from './ProductsAPI/ProductsService';
 import { FAQService as FAQ_API } from './FAQ_API/FAQService';
 import { FormService as FormAPI } from './FormAPI/FormService';
+import { PostService as PostAPI } from './PostAPI/PostService';
 
 export { 
   DocumentsAPI, 
   ReportsAPI, 
   ProductsAPI, 
   FAQ_API,
-  FormAPI
+  FormAPI,
+  PostAPI
 };
