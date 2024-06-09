@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContactModalButton from '../ContactModalButton/ContactModalButton';
 
-function Hero() {
+function Hero({ onLoad }) {
   const location = useLocation();
-  const [headerInfo, setHeaderInfo] = useState({
+  const [headerInfo, setHeaderInfo] = React.useState({
     img: '',
     text: '',
   });
 
   useEffect(() => {
-    if (location.pathname === '/')
+    if (location.pathname === '/') {
       setHeaderInfo({
         img: 'section-title',
         text: 'Центр Единство',
@@ -19,25 +19,33 @@ function Hero() {
           'Мы поддерживаем патриотические ценности, национальную культуру и традиции, важные для формирования единства нашей страны',
         isHome: true,
       });
-    if (location.pathname === '/about')
+    } else if (location.pathname === '/about') {
       setHeaderInfo({
         img: 'header-about',
         text: 'Кто мы такие и чем занимаемся',
         isHome: false,
       });
-    if (location.pathname === '/projects')
+    } else if (location.pathname === '/projects') {
       setHeaderInfo({
         img: 'header-post',
         text: 'Проекты',
         isHome: false,
       });
-    if (location.pathname === '/reports')
+    } else if (location.pathname === '/reports') {
       setHeaderInfo({
         img: 'header-report',
         text: 'Отчеты',
         isHome: false,
       });
+    }
   }, [location]);
+
+  // Используем эффект, чтобы сигнализировать об окончании загрузки фона
+  useEffect(() => {
+    const img = new Image();
+    img.src = `assets/${headerInfo.img}.png`;
+    img.onload = onLoad;
+  }, [headerInfo.img, onLoad]);
 
   return (
     <section
