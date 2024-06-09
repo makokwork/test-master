@@ -3,6 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import { useEffect, useState } from 'react';
 import { PostAPI } from '../../API';
+import ContentBlock from './ui/ContentBlock';
 
 function BlogPage() {
   const [post, setPost] = useState({});
@@ -25,7 +26,7 @@ function BlogPage() {
         </header>
         <div>
           {post.content?.blocks.map((block) => (
-            <p>{block.data.text}</p>
+            <ContentBlock key={block.id} block={block} />
           ))}
         </div>
       </section>

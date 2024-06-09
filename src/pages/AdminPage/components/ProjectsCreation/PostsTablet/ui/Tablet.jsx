@@ -23,8 +23,6 @@ export const Tablet = () => {
       .catch((err) => console.error(err));
   }, [dispatch]);
 
-  console.log(posts);
-
   return (
     <TableContainer component={Paper} style={{ marginTop: '30px' }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">

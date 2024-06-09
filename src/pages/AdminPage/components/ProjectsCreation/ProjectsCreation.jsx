@@ -31,11 +31,11 @@ export const AddPost = () => {
     const postData = new FormData();
     let exceprt = '';
 
-    if (content.blocks[0].data.text.length > 150) {
-      exceprt = content.blocks[0].data.text.slice(0, 150);
-    } else {
-      exceprt = content.blocks[0].data.text;
-    }
+    content.blocks.forEach(block => {
+      if (block.type === 'paragraph') {
+        exceprt = block.data.text.slice(0, 150);
+      }
+    })
 
     postData.set('title', title);
     postData.set('content', JSON.stringify(content));
