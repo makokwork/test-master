@@ -10,20 +10,21 @@ function BlogPage() {
 
   useEffect(() => {
     PostAPI.getById(blogId)
-      .then(post => setPost(post))
-      .catch(err => console.error(err))
-  }, [blogId])
+      .then((post) => setPost(post))
+      .catch((err) => console.error(err));
+  }, [blogId]);
 
   console.log(post);
 
   return (
     <>
       <Header />
-      <section className='section container-about'>
-        <h1>{post.title}</h1>
-        <img src={post.preview_image} alt="" />
+      <section className="section container-about">
+        <header className="blog-inner">
+          <h1>{post.title}</h1>
+        </header>
         <div>
-          {post.content?.blocks.map(block => (
+          {post.content?.blocks.map((block) => (
             <p>{block.data.text}</p>
           ))}
         </div>

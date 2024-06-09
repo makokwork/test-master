@@ -57,7 +57,7 @@ const AddPost = () => {
   return (
     <>
       <section className="message section container">
-        <h2>Добавление проекта на странице "Блог"</h2>
+        <h2>Добавление проекта на странице "Проекты"</h2>
 
         <Paper style={{ padding: 30 }} elevation={3}>
           <form className="message-form">

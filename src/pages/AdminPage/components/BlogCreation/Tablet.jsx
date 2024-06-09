@@ -13,7 +13,7 @@ export default function BasicTable() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Название документа</TableCell>
+            <TableCell>Название поста</TableCell>
             <TableCell align="right">Действие</TableCell>
           </TableRow>
         </TableHead>

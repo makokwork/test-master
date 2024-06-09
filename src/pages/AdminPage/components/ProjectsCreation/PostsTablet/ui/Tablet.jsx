@@ -19,9 +19,9 @@ export const Tablet = () => {
 
   useEffect(() => {
     PostAPI.getAll()
-      .then(posts => dispatch(initPosts({ posts })))
-      .catch(err => console.error(err))
-  }, [dispatch])
+      .then((posts) => dispatch(initPosts({ posts })))
+      .catch((err) => console.error(err));
+  }, [dispatch]);
 
   console.log(posts);
 
@@ -30,16 +30,16 @@ export const Tablet = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Название документа</TableCell>
+            <TableCell>Название поста</TableCell>
             <TableCell align="right">Действие</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {posts.map(post => (
+          {posts.map((post) => (
             <Post key={post.id} post={post} />
           ))}
         </TableBody>
       </Table>
     </TableContainer>
   );
-}
+};

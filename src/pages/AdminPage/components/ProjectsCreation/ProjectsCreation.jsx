@@ -22,10 +22,10 @@ export const AddPost = () => {
 
   const handleSelectFile = () => {
     inputFileRef.current.click();
-    inputFileRef.current.addEventListener("change", () => {
+    inputFileRef.current.addEventListener('change', () => {
       setPreview(inputFileRef.current.files[0]);
-    })
-  }
+    });
+  };
 
   const handleCreatePost = () => {
     const postData = new FormData();
@@ -43,42 +43,43 @@ export const AddPost = () => {
     postData.set('excerpt', exceprt);
 
     PostAPI.create(postData)
-      .then(post => {
+      .then((post) => {
         dispatch(addPost({ post }));
         setTitle('');
         setPreview(null);
         editorRef.current.blocks.clear();
-      })  
-      .catch(err => console.error(err))
-  }
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <>
       <section className="message section container">
-        <h2>Добавление проекта на странице "Проекты"</h2>
+        <h2>Добавление проекта на странице "Блог"</h2>
 
         <Paper style={{ padding: 30 }} elevation={3}>
           <form className="message-form">
             <div className="message-form-body">
-              <input 
-                name="email" 
-                type="text" 
-                placeholder="Заголовок..." 
+              <input
+                name="email"
+                type="text"
+                placeholder="Заголовок..."
                 value={title}
-                onChange={e => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
           </form>
-          <EditorComponent 
-            editorRef={editorRef} 
-            setContent={setContent}
-          />
+          <EditorComponent editorRef={editorRef} setContent={setContent} />
           <Button onClick={handleSelectFile} variant="outlined" size="large">
             <input ref={inputFileRef} className={styles.input__file} type="file" />
             {preview ? preview.name : 'Загрузить превью'}
           </Button>
         </Paper>
-        <Button style={{ marginTop: '30px' }} size="large" variant="contained" onClick={handleCreatePost}>
+        <Button
+          style={{ marginTop: '30px' }}
+          size="large"
+          variant="contained"
+          onClick={handleCreatePost}>
           Опубликовать
         </Button>
         <Tablet />

@@ -39,7 +39,7 @@ const Admin = () => {
                   <li
                     className={activeLink === 1 ? 'current-link' : ''}
                     onClick={() => handleClick(1)}>
-                    Проекты
+                    Блог
                   </li>
                 </NavLink>
 
@@ -79,7 +79,7 @@ const Admin = () => {
                   <li
                     className={activeLink === 6 ? 'current-link' : ''}
                     onClick={() => handleClick(6)}>
-                    Блог
+                    Проекты
                   </li>
                 </NavLink>
               </ul>
