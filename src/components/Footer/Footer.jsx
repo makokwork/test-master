@@ -120,19 +120,37 @@ function Footer() {
             <ul className="extra-list">
               <li className="extra-list__item">
                 <NavLink to="">
-                  <img src="./images/icons/whatsapp.svg" alt="Ватсапп" width="26" height="26" />
+                  <img
+                    src="/images/icons/whatsapp.svg"
+                    alt="Ватсапп"
+                    width="26"
+                    height="26"
+                    loading="lazy"
+                  />
                 </NavLink>
               </li>
 
               <li className="extra-list__item">
                 <NavLink to="https://vk.com/club108684224">
-                  <img src="./images/icons/vk.svg" alt="Вконтакте" width="26" height="26" />
+                  <img
+                    src="/images/icons/vk.svg"
+                    alt="Вконтакте"
+                    width="26"
+                    height="26"
+                    loading="lazy"
+                  />
                 </NavLink>
               </li>
 
               <li className="extra-list__item">
                 <NavLink to="https://t.me/voinstvoXristovo">
-                  <img src="./images/icons/telegram.svg" alt="Телеграм" width="26" height="26" />
+                  <img
+                    src="/images/icons/telegram.svg"
+                    alt="Телеграм"
+                    width="26"
+                    height="26"
+                    loading="lazy"
+                  />
                 </NavLink>
               </li>
             </ul>
