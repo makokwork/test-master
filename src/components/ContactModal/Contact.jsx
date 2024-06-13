@@ -8,14 +8,14 @@ const cleanDataForm = {
   name: '',
   phone: '',
   email: '',
-  message: ''
-}
+  message: '',
+};
 
 const cleanFeedbackInfo = {
   isShow: false,
   type: '',
-  text: ''
-}
+  text: '',
+};
 
 const Contact = ({ isModal, closeButton, className }) => {
   const [isAgreed, setIsAgreed] = useState(false);
@@ -24,26 +24,29 @@ const Contact = ({ isModal, closeButton, className }) => {
   const [error, setError] = useState('');
 
   const handleSend = () => {
-    if (!isAgreed) return setError('Вам необходимо согласиться с нашей политикой конфиденциальности');
+    if (!isAgreed)
+      return setError('Вам необходимо согласиться с нашей политикой конфиденциальности');
 
     FormAPI.create(dataForm)
-      .then(() => setFeedbackInfo({
-        isShow: true,
-        type: 'success',
-        text: 'Заявка успешно отправлена'
-      }))
+      .then(() =>
+        setFeedbackInfo({
+          isShow: true,
+          type: 'success',
+          text: 'Заявка успешно отправлена',
+        }),
+      )
       .catch(() => {
         setFeedbackInfo({
           isShow: true,
           type: 'error',
-          text: 'Ошибка при отправке заявки'
+          text: 'Ошибка при отправке заявки',
         });
         setTimeout(() => setFeedbackInfo(cleanFeedbackInfo), 3000);
       })
       .finally(() => {
         setError('');
         setDataForm(cleanDataForm);
-      })
+      });
   };
 
   return (
@@ -63,42 +66,49 @@ const Contact = ({ isModal, closeButton, className }) => {
           </div>
           <p>Заполните поля ниже, чтобы мы могли связаться с Вами как можно скорее</p>
           <form>
-            <input 
-              type="text" 
-              placeholder="ФИО" 
+            <input
+              type="text"
+              placeholder="ФИО"
               value={dataForm.name}
-              onChange={e => setDataForm({
-                ...dataForm,
-                name: e.target.value
-              })}
+              onChange={(e) =>
+                setDataForm({
+                  ...dataForm,
+                  name: e.target.value,
+                })
+              }
             />
-            <input 
-              type="text" 
-              placeholder="Электронная почта" 
+            <input
+              type="text"
+              placeholder="Электронная почта"
               value={dataForm.email}
-              onChange={e => setDataForm({
-                ...dataForm,
-                email: e.target.value
-              })}
+              onChange={(e) =>
+                setDataForm({
+                  ...dataForm,
+                  email: e.target.value,
+                })
+              }
             />
-            <input 
-              type="text" 
-              placeholder="Номер телефона" 
+            <input
+              type="text"
+              placeholder="Номер телефона"
               value={dataForm.phone}
-              onChange={e => setDataForm({
-                ...dataForm,
-                phone: e.target.value
-              })}
+              onChange={(e) =>
+                setDataForm({
+                  ...dataForm,
+                  phone: e.target.value,
+                })
+              }
             />
-            <textarea 
-              rows="6" 
+            <textarea
+              rows="6"
               placeholder="Сообщение"
               value={dataForm.message}
-              onChange={e => setDataForm({
-                ...dataForm,
-                message: e.target.value
-              })}
-            ></textarea>
+              onChange={(e) =>
+                setDataForm({
+                  ...dataForm,
+                  message: e.target.value,
+                })
+              }></textarea>
             <label>
               <div>
                 <input type="checkbox" onClick={(e) => setIsAgreed(e.target.checked)} />
@@ -128,8 +138,7 @@ const Contact = ({ isModal, closeButton, className }) => {
             </button>
           ) : (
             <Alert severity={feedbackInfo.type}>{feedbackInfo.text}</Alert>
-          )
-          }
+          )}
         </div>
       </div>
     </div>
