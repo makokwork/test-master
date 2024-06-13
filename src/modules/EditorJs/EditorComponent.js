@@ -28,9 +28,9 @@ const EditorComponent = ({ editorRef, setContent }) => {
         link: Link,
         attaches: {
           class: AttachesTool,
-          config: {
-            endpoint: 'http://localhost:8008/uploadFile',
-          },
+          //   config: {
+          //     endpoint: 'https://moonsands-edinstvo-5488.twc1.net/',
+          //   },
         },
       },
       i18n: {
