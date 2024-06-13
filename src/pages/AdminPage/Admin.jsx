@@ -35,7 +35,7 @@ const Admin = () => {
             <h3>Управление контентом</h3>
             <div className="nav-menu__content">
               <ul>
-                <NavLink to="projects">
+                <NavLink to="blog">
                   <li
                     className={activeLink === 1 ? 'current-link' : ''}
                     onClick={() => handleClick(1)}>
@@ -75,7 +75,7 @@ const Admin = () => {
                   </li>
                 </NavLink>
 
-                <NavLink to="blog">
+                <NavLink to="projects">
                   <li
                     className={activeLink === 6 ? 'current-link' : ''}
                     onClick={() => handleClick(6)}>

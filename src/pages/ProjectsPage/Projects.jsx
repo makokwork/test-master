@@ -3,8 +3,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';
 import useHeroLoaded from '../../hooks/useHeroLoaded';
-
-const Project = React.lazy(() => import('./components/Project'));
+import { Posts } from '../../components/Posts';
 
 function Projects() {
   const [isHeroLoaded, handleHeroLoad] = useHeroLoaded();
@@ -15,12 +14,7 @@ function Projects() {
       {isHeroLoaded && (
         <Suspense>
           <section className="section container-about">
-            <div className="project-container">
-              <Project />
-              <Project />
-              <Project />
-              <Project />
-            </div>
+            <Posts category={'projects'} />
           </section>
           <Footer />
         </Suspense>

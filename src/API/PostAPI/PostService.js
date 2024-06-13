@@ -1,8 +1,14 @@
 import { $authHost, $host } from "../config";
 
 export class PostService {
-  static async getAll() {
-    const response = await $host.get('posts/');
+  static async getAll(category) {
+    let response;
+
+    if (category) {
+      response = await $host.get(`posts/${category}/`);
+    } else {
+      response = await $host.get('posts/$');
+    }
 
     return response.data;
   }
@@ -24,4 +30,9 @@ export class PostService {
 
     return response.data;
   }
+
+  // TODO
+  // static async addFile(dataFile) {
+  //   const response = await $authHost.post(``);
+  // }
 }
