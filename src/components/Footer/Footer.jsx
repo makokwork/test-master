@@ -22,7 +22,7 @@ function Footer() {
                   </NavLink>
                 </li>
                 <li className="socials__item">
-                  <NavLink to="" className="socials__link" onClick={scrollToTop}>
+                  <NavLink to="/projects" className="socials__link" onClick={scrollToTop}>
                     Проекты
                   </NavLink>
                 </li>
