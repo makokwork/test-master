@@ -1,35 +1,19 @@
-import { useParams } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import { useEffect, useState } from 'react';
-import { PostAPI } from '../../API';
-import ContentBlock from './components/ContentBlock';
-import Hero from '../../components/Hero/Hero';
+import Footer from '../../components/Footer/Footer';
+import { Posts } from '../../components/Posts';
 
-function BlogPage() {
-  const [post, setPost] = useState({});
-  const { blogId } = useParams();
-
-  useEffect(() => {
-    PostAPI.getById(blogId)
-      .then((post) => setPost(post))
-      .catch((err) => console.error(err));
-  }, [blogId]);
-
-  console.log(post);
-
+const BlogPage = () => {
   return (
     <>
       <Header />
       <section className="section container-about">
-        <header className="blog-inner">
-          <h1>{post.title}</h1>
+        <header className="blog">
+          <h1 className="visually-hidden">Страница Блог</h1>
+          <h2>Блог</h2>
+          <h3>Список новостей на тему нашей деятельности</h3>
         </header>
-        <div className="content">
-          {post.content?.blocks.map((block) => (
-            <ContentBlock key={block.id} block={block} />
-          ))}
-        </div>
+
+        <Posts category={'blog'} />
       </section>
       <Footer />
     </>

@@ -1,8 +1,6 @@
 import { createElement } from "react";
 
 const ContentBlock = ({ block }) => {
-  console.log(block);
-
   switch(block.type) {
     case "paragraph": 
       return <p dangerouslySetInnerHTML={{

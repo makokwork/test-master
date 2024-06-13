@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getArrayIndexByObjectId } from "../functions";
 
 const postsSlice = createSlice({
   name: 'posts',
@@ -15,14 +14,7 @@ const postsSlice = createSlice({
     },
     removePost(state, action) {
       state.posts = [...state.posts.filter((post) => post.id !== action.payload.postId)];
-    },
-    // updateProduct(state, action) {
-    //   const product = action.payload.product;
-
-    //   const indexProductUpdate = getArrayIndexByObjectId(state.products, product.id);
-
-    //   state.products[indexProductUpdate] = product;
-    // }
+    }
   },
   selectors: {
     selectPosts: state => state.posts

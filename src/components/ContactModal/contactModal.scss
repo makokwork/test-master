@@ -118,3 +118,7 @@
   opacity: 1;
   pointer-events: all;
 }
+
+body:has(.modal.active) {
+  overflow: hidden;
+}

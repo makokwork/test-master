@@ -13,15 +13,15 @@ import { useSelector } from 'react-redux';
 import { initPosts, selectPosts } from '../../../../../../store/features/posts';
 import Post from './Post';
 
-export const Tablet = () => {
+export const Tablet = ({ category }) => {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
 
   useEffect(() => {
-    PostAPI.getAll()
+    PostAPI.getAll(category)
       .then((posts) => dispatch(initPosts({ posts })))
       .catch((err) => console.error(err));
-  }, [dispatch]);
+  }, [dispatch, category]);
 
   return (
     <TableContainer component={Paper} style={{ marginTop: '30px' }}>

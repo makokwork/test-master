@@ -4,7 +4,6 @@ import { privateRoutes, publicRoutes } from './index.ts';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
 import Loader from '../components/Loader/Loader.jsx';
-import BlogPage from '../pages/BlogPage/BlogPage.jsx';
 
 const Home = lazy(() => import('../pages/HomePage/Home.jsx'));
 const AboutUs = lazy(() => import('../pages/AboutPage/AboutPage.jsx'));
@@ -13,9 +12,10 @@ const Reports = lazy(() => import('../pages/ReportsPage/Reports.jsx'));
 const Documents = lazy(() => import('../pages/DocumentsPage/Documents.jsx'));
 const GetHelp = lazy(() => import('../pages/GetHelpPage/GetHelp.jsx'));
 const GiveHelp = lazy(() => import('../pages/GiveHelpPage/GiveHelp.jsx'));
-const Blogs = lazy(() => import('../pages/BlogPage/Blogs.jsx'));
+const BlogPage = lazy(() => import('../pages/BlogPage/BlogPage.jsx'));
 const Policy = lazy(() => import('../pages/PolicyPage/Policy.jsx'));
 const Redirect = lazy(() => import('../pages/GiveHelpPage/components/Shop/ShopRedirect.jsx'));
+const PostPage = lazy(() => import('../components/Posts/ui/PostPage.jsx'));
 
 const AppRouter = () => {
   const { isAuth } = useAuth();
@@ -41,8 +41,8 @@ const AppRouter = () => {
         <Route path="/documents" element={<Documents />} />
         <Route path="/gethelp" element={<GetHelp />} />
         <Route path="/givehelp" element={<GiveHelp />} />
-        <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:blogId" element={<BlogPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/post/:postId" element={<PostPage />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/redirect" element={<Redirect />} />
         <Route path="/login" element={<Navigate to="/login" />} />
