@@ -23,9 +23,24 @@ const Contact = ({ isModal, closeButton, className }) => {
   const [feedbackInfo, setFeedbackInfo] = useState(cleanFeedbackInfo);
   const [error, setError] = useState('');
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
   const handleSend = () => {
     if (!isAgreed)
       return setError('Вам необходимо согласиться с нашей политикой конфиденциальности');
+
+    if (!dataForm.name || !dataForm.email || !dataForm.message) {
+      return setError(
+        'Пожалуйста, заполните все обязательные поля: ФИО, электронная почта, сообщение.',
+      );
+    }
+
+    if (!validateEmail(dataForm.email)) {
+      return setError('Пожалуйста, введите действительный адрес электронной почты.');
+    }
 
     FormAPI.create(dataForm)
       .then(() =>
@@ -78,8 +93,9 @@ const Contact = ({ isModal, closeButton, className }) => {
               }
             />
             <input
-              type="text"
+              type="email"
               placeholder="Электронная почта"
+              required
               value={dataForm.email}
               onChange={(e) =>
                 setDataForm({
@@ -89,7 +105,7 @@ const Contact = ({ isModal, closeButton, className }) => {
               }
             />
             <input
-              type="text"
+              type="tel"
               placeholder="Номер телефона"
               value={dataForm.phone}
               onChange={(e) =>
